@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="entrepreneur_case" model="ir.ui.view">
+        <field name="name">entrepreneur.case.form</field>
+        <field name="model">entrepreneur.case</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Entrepreneur Case">
+                <sheet>
+                    <group>
+                        <group>
+                           <field name="name" />
+                           <field name="entrepreneur_team_id" />
+                        </group>
+                        <group>
+                           
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Team members">
+                            <field name="team_member_ids" widget="one2many" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_entrepreneur_case_tree" model="ir.ui.view">
+        <field name="name">entrepreneur.case.tree</field>
+        <field name="model">entrepreneur.case</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Entrepreneur Cases">
+                <field name="name" />
+                <field name="entrepreneur_team_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_entrepreneur_case_search" model="ir.ui.view">
+        <field name="name">entrepreneur.case.search</field>
+        <field name="model">entrepreneur.case</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Entrepreneur Cases">
+                <field name="name" />
+                <field name="entrepreneur_team_id" />
+                <field name="team_member_ids" />
+            </search>
+        </field>
+    </record>
+
+    <record id="action_entrepreneur_case" model="ir.actions.act_window">
+        <field name="name">Entrepreneur case</field>
+        <field name="res_model">entrepreneur.case</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_entrepreneur_case_tree" />
+        <field name="search_view_id" ref="view_entrepreneur_case_search" />
+    </record>
+</odoo>
