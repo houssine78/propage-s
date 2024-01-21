@@ -4,7 +4,6 @@
     <menuitem name="Entrepreneur Cases" id="entrepreneur_case_main_menu" parent="menu_root">
         <menuitem name="Entrepreneur Cases" id="entrepreneur_case_menu" action="action_entrepreneur_case" sequence="1"/>
         <menuitem name="Entrepreneur Team" id="entrepreneur_team_menu" action="action_entrepreneur_team" sequence="2"/>
+        <menuitem name="Entrepreneurs" id="entrepreneur_menu" action="action_partner_entrepreneur" sequence="3"/>
     </menuitem>
-    <!--<menuitem name="Team Leaders" id="team_leader_menu" parent="entrepreneur_case_menu"/>
-    <menuitem name="Team Members" id="team_member_menu" parent="entrepreneur_case_menu"/>-->
 </odoo>

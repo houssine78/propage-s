@@ -18,4 +18,11 @@
             </page> -->
 		</field>
 	</record>
+
+   <record id="action_partner_entrepreneur" model="ir.actions.act_window">
+        <field name="name">Entrepreneurs</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_entrepreneur', '=', True)]</field>
+    </record>
 </odoo>
