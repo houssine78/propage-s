@@ -18,7 +18,15 @@
                     </group>
                     <notebook>
                         <page string="Team members">
-                            <field name="team_member_ids" widget="one2many" />
+                            <field name="team_member_ids" context="{'default_is_entrepreneur': True}">
+                                <tree>
+                                    <field name="firstname" />
+                                    <field name="lastname" />
+                                    <field name="mobile" />
+                                    <field name="phone" />
+                                    <field name="email" />
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

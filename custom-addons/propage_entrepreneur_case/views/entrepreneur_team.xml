@@ -6,20 +6,36 @@
         <field name="type">form</field>
         <field name="arch" type="xml">
             <form string="Entrepreneur Team">
-                <group>
-    	            <group>
-    	               <field name="name" />
-    	               <field name="team_leader_id" />
-    	            </group>
-    	            <group>
-    	               <field name="entrepreneur_case_ids" widget="many2one"/>
-    	            </group>
-                </group>
-                <notebook>
-                    <page string="Team members">
-                        <field name="team_member_ids" widget="one2many" />
-                    </page>
-                </notebook>
+                <sheet>
+                    <group>
+        	            <group>
+        	               <field name="name" />
+        	               <field name="team_leader_id" />
+        	            </group>
+        	            <group>
+        	            </group>
+                    </group>
+                    <notebook>
+                        <page string="Team members">
+                            <field name="team_member_ids" context="{'default_is_entrepreneur': True}">
+                                <tree>
+                                    <field name="firstname" />
+                                    <field name="lastname" />
+                                    <field name="mobile" />
+                                    <field name="phone" />
+                                    <field name="email" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Entrepreneur Cases">
+    	                   <field name="entrepreneur_case_ids">
+    	                       <tree>
+    	                           <field name="name" />
+    	                       </tree>
+    	                   </field>
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>
