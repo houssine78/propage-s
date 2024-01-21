@@ -9,15 +9,17 @@
     "website": "https://www.openarchitecsconsulting.com",
     "license": "AGPL-3",
     "depends": [
+        "base",
         "propage_base",
         "propage_crm",
-        "project"
+        "project",
     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/entrepreneur_case_view.xml",
-        "views/entrepreneur_team_view.xml",
-        "views/entrepreneur_case_menu.xml"
+        "views/entrepreneur_case.xml",
+        "views/entrepreneur_team.xml",
+        "views/partner.xml",
+        "views/entrepreneur_case_menu.xml",
     ],
     "installable": True,
 }
