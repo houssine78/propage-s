@@ -9,10 +9,10 @@
     "website": "https://www.openarchitecsconsulting.com",
     "license": "AGPL-3",
     "depends": [
-        "crm",
-        "project",
         "propage_community_base"
-        
+    ],
+    "data": [
+        "security/propage_base_security.xml",
     ],
     "installable": True,
 }
