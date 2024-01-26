@@ -9,11 +9,12 @@
     "website": "https://www.openarchitecsconsulting.com",
     "license": "AGPL-3",
     "depends": [
+        "crm",
         "propage_base",
-        "crm"
     ],
     "data": [
-        "data/crm_stage_data.xml"
+        "data/crm_stage_data.xml",
+        "views/crm_lead.xml"
     ],
     "installable": True,
 }
