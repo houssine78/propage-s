@@ -14,6 +14,7 @@
         "web_responsive",
         "web_refresher",
         "web_widget_x2many_2d_matrix",
+        "web_chatter_position",
         "partner_firstname",
         "partner_contact_birthdate",
         "partner_contact_gender",
