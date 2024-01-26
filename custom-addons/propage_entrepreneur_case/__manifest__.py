@@ -10,9 +10,9 @@
     "license": "AGPL-3",
     "depends": [
         "base",
-        "propage_base",
-        "propage_crm",
         "project",
+        "propage_base",
+        "propage_crm"
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -20,6 +20,7 @@
         "views/entrepreneur_team.xml",
         "views/partner.xml",
         "views/entrepreneur_case_menu.xml",
+        "views/crm_lead.xml"
     ],
     "installable": True,
 }
