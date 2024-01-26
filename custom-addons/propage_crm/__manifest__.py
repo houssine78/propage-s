@@ -11,7 +11,9 @@
     "depends": [
         "propage_base",
         "crm"
-        
+    ],
+    "data": [
+        "data/crm_stage_data.xml"
     ],
     "installable": True,
 }
