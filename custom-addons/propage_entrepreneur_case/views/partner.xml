@@ -6,7 +6,9 @@
         <field name="arch" type="xml">
             <xpath expr="//form//field[@name='firstname']" position="after">
                 <field name="is_entrepreneur" />
+                <field name="fse_id" />
             </xpath>
+            
             <!-- <page name="contact_addresses" position="after">
                 <page string="Propage-s Information" name="propage">
                     <form>

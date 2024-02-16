@@ -7,3 +7,4 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
 
     is_entrepreneur = fields.Boolean()
+    fse_id = fields.Integer()
