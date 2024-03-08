@@ -1,0 +1,3 @@
+<odoo>
+    <menuitem name="Propage-s" id="menu_root" groups="propage_base.group_propage_user" web_icon="propage_base,static/description/icon.png"/>
+</odoo>
