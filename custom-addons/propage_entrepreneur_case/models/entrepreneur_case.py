@@ -37,12 +37,10 @@ class EntrepreneurCase(models.Model):
         "crm.lead",
         string="Created from lead"
     )
-    is_fse = fields.Boolean(
-        string="Covered by FSE"
-    )
+    is_fse = fields.Boolean(string="Covered by FSE")
     is_decree_consultancy_agency = fields.Boolean(
         string="Covered by Wallonia Decree"
     )
-    responsible = fields.Many2one(
-        'res.users'
-    )
+    responsible = fields.Many2one('res.users')
+    convention_2c = fields.Binary(string="Convention 2C")
+    covention_file_name = fields.Char()

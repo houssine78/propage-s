@@ -7,3 +7,5 @@ class Lead(models.Model):
     _inherit = "crm.lead"
 
     is_won = fields.Boolean(related='stage_id.is_won')
+    convention_2c = fields.Binary(string="Convention 2C")
+    covention_file_name = fields.Char()

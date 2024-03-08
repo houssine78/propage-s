@@ -34,8 +34,16 @@
                             </field>
                         </page>
                         <page name="information" string="Administrative info">
-                            <field name="is_fse" />
-                            <field name="is_decree_consultancy_agency" />
+                            <group>
+                                <field name="is_fse" />
+                                <field name="is_decree_consultancy_agency" />
+                            </group>
+                        </page>
+                        <page name="files" string="Files">
+                            <group>
+                                <field name="covention_file_name" invisible="True" />
+                                <field name="convention_2c" filename="covention_file_name" />
+                            </group>
                         </page>
                     </notebook>
                 </sheet>

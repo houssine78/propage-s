@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="crm_lead_view_form" model="ir.ui.view">
-	   <field name="name">crm.lead.form</field>
-	   <field name="model">crm.lead</field>
-	   <field name="inherit_id" ref="crm.crm_lead_view_form"/>
-	   <field name="arch" type="xml">
-	       <button name="action_set_lost" position="after">
-		       <button name="action_create_case" string="Create Case" type="object" data-hotkey="l" title="Create Entrepreneur Case"
-		           attrs="{'invisible': [('type', '=', 'opportunity'), ('is_won', '=', False), ('case_ids', '!=', False)]}"/>
-	       </button>
-	       <page name="extra" position="after">
-	           <page name="entrepreneur_case" string="Entrepeneur Cases">
-                  <field name="case_ids" nolabel="True" readonly="True"/>
-               </page>
-           </page>
-	   </field>
-	</record>
+        <field name="name">crm.lead.form</field>
+	    <field name="model">crm.lead</field>
+	    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+	    <field name="arch" type="xml">
+            <button name="action_set_lost" position="after">
+                <button name="action_create_case" string="Create Case" type="object" title="Create Entrepreneur Case"
+		                attrs="{'invisible': [('show_create_case', '=', False)]}"/>
+	        </button>
+            <page name="extra" position="after">
+                <page name="entrepreneur_case" string="Entrepeneur Cases">
+                    <group>
+                        <field name="show_create_case" invisible="True" />
+    	            </group> 
+                    <field name="case_ids" nolabel="True" readonly="True" />
+                </page>
+            </page>
+        </field>
+    </record>
 </odoo>

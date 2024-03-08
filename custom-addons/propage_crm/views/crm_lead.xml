@@ -8,6 +8,10 @@
 	       <field name="active" position="after">
 	           <field name="is_won" invisible="1"/>
 	       </field>
+	       <field name="tag_ids" position="after">
+	           <field name="covention_file_name" invisible="True" />
+	           <field name="convention_2c" filename="covention_file_name" />
+	       </field>
 	   </field>
 	</record>
 </odoo>
