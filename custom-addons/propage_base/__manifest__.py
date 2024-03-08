@@ -13,6 +13,7 @@
     ],
     "data": [
         "security/propage_base_security.xml",
+        "security/ir.model.access.csv"
     ],
     "installable": True,
 }
