@@ -1,0 +1,312 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* propage_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-05 14:34+0000\n"
+"PO-Revision-Date: 2024-04-05 16:36+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_BE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_accounting
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_accounting_obligations
+msgid "Accounting and tax obligations"
+msgstr "Obligations comptables et fiscales d’une entreprise"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_accounting_basic_concepts
+msgid "Basic concepts: balance sheet, income statement, PCMN, etc."
+msgstr "Notions de base : bilan, compte de résultat, PCMN, etc"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_basic_concepts
+msgid ""
+"Basic financial concepts: cash flow, profitability, liquidity, capital, etc."
+msgstr ""
+"Notions financières de base : flux de trésorerie, rentabilité, liquidité, "
+"capitaux,…"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_bilateral_evaluation
+msgid "Bilateral end-of-mission evaluation"
+msgstr "Évaluation bilatérale de fin de mission"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_business_cessation
+msgid "Business cessation (sale and liquidation)"
+msgstr "La cessation d’une entreprise (cession et liquidation)"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_business_transfer
+msgid "Business transfer training"
+msgstr "Formation sur la transmission d’une entreprise"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_company_reorganization
+msgid "Company reorganization - reflection and decision support"
+msgstr ""
+"Réorganisation de l’entreprise – réflexion et aide à la prise de décision"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_conflict_interest
+msgid "Conflict of interest procedure training"
+msgstr "Formation sur la procédure de conflits d’intérêts"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_diagnosis
+msgid "Diagnosis of start-up conditions and preliminary meetings"
+msgstr "Diagnostic des conditions de démarrage et rencontres préalables"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_value_estimation
+msgid "Estimate the value of my business/project (in the event of a sale)"
+msgstr "Estimation de la valeur de mon entreprise/projet (cas de cession)"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_hr_cost
+msgid "Estimating the cost of human resources"
+msgstr "Evaluation du coût des ressources humaines"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_cost_price_evaluation
+msgid "Evaluation of cost price"
+msgstr "Evaluation du prix de revient"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_forecast
+msgid "Financial forecasts"
+msgstr "Prévisions financières"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_financial_management
+msgid "Financial management"
+msgstr "Gestion financière"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_strategy
+msgid "Financing strategy"
+msgstr "Stratégie de financement"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_cooperative_society
+msgid ""
+"Functioning of the cooperative society/ASBL and decision-making within "
+"corporate bodies"
+msgstr ""
+"Fonctionnement de la société coopérative/l’ASBL et prise de décisions au "
+"sein des organes de l’entreprise"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_gouv_org_coll
+msgid "Governance and collective organization"
+msgstr "Gouvernance et organisation collective"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_group_organization
+msgid "Group organization and decision-making"
+msgstr "Organisation du collectif et prises de décision"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_management_tools
+msgid "Implementation of management tools"
+msgstr "Mise en place d’outils de gestion"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_internal_regulations
+msgid "Internal regulations"
+msgstr "Le règlement d’ordre intérieur"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_simplified_accounting
+msgid "Introduction to simplified accounting (micro-Association)"
+msgstr "Initiation comptabilité simplifiée (micro-ASBL)"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_Legal
+msgid "Legal"
+msgstr "Juridique"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_legal
+msgid "Legal training"
+msgstr "Formation aux aspects juridiques"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_health
+msgid ""
+"Method/analysis of health/financial situation: feasibility and viability "
+"study"
+msgstr ""
+"Méthode/analyse de la santé/situation financière : étude de faisabilité et "
+"viabilité"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_cashflow_plan
+msgid "Preparing a cash flow plan"
+msgstr "Préparation du plan de trésorerie"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_management
+msgid "Project management"
+msgstr "Gestion de projets"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_tools
+msgid "Project structuring and management tools"
+msgstr "Outils de structuration et gestion de projet"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_business_model
+msgid "Reflecting on the business model"
+msgstr "Réflexion sur le modèle économique"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_plan
+msgid "Reflection and elaboration of the financial plan"
+msgstr "Réflexion et élaboration du plan financier"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_analytic_accounting
+msgid "Setting up analytic accounting"
+msgstr "Mise en place d’une comptabilité analytique"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_shareholder_agreement
+msgid "Shareholders' agreement"
+msgstr "Le pacte d’actionnaires"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_social_economy
+msgid "Social economy approvals"
+msgstr "Les agréments en économie sociale"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_implementation
+msgid "Solution implementation"
+msgstr "Mise en place de la solution"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_strategic_orientation
+msgid ""
+"Strategic orientation, training in identifying objectives and translating "
+"them into action"
+msgstr ""
+"Orientation stratégique, formation à l’identification des objectifs et leur "
+"déclinaison en action"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_stategic_thinking
+msgid "Strategic thinking"
+msgstr "Réflexion stratégique"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_support_implementing
+msgid "Support in implementing identified solutions"
+msgstr "Accompagnement vers la mise en place des solutions identifiées"
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: propage_project
+#: model:project.project,label_tasks:propage_project.project_Legal
+#: model:project.project,label_tasks:propage_project.project_accounting
+#: model:project.project,label_tasks:propage_project.project_financial_management
+#: model:project.project,label_tasks:propage_project.project_gouv_org_coll
+#: model:project.project,label_tasks:propage_project.project_management
+#: model:project.project,label_tasks:propage_project.project_stategic_thinking
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_main_contracts
+msgid "The main contracts"
+msgstr "Les principaux contrats"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__name
+msgid "Title"
+msgstr "Titre"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_company_roles
+msgid "Training on company roles and responsibilities"
+msgstr ""
+"Formation sur les rôles au sein d’une entreprise et les responsabilités"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_director_obligations
+msgid "Training on directors' obligations (alarm bell procedure, etc.)"
+msgstr ""
+"Formation sur les obligations des administrateurs (procédure de sonnette "
+"d’alarme, etc)"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_acticles_association
+msgid "Training on the Articles of Association of a cooperative society/ASBL"
+msgstr "Formation sur les statuts d’une société coopérative/ASBL"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_legal_structure
+msgid ""
+"Training on the choice of legal structure: characteristics of ASBLs and "
+"cooperative societies"
+msgstr ""
+"Formation sur le choix de la structure juridique : caractéristiques des "
+"ASBL et des sociétés coopératives"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_formalities
+msgid ""
+"Training on the formalities of setting up a business and the life of a "
+"business"
+msgstr ""
+"Formation sur les formalités de constitution d’une entreprise et de la vie "
+"d’une entreprise"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_transforming_company
+msgid "Training on transforming a company into another legal form"
+msgstr ""
+"Formation sur la transformation d’une entreprise en une autre forme "
+"juridique"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training
+msgid "Training/coaching in project structuring and management"
+msgstr "Formation/accompagnement à la structuration et la gestion de projet"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_business_plan
+msgid "Training/coaching in the creation of a business plan"
+msgstr "Formation/accompagnement dans la réalisation d’un plan d’affaires"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_training_financial_projection
+msgid "Training/coaching in the preparation of financial projections"
+msgstr "Formation/accompagnement à l’établissement de projections financières"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_values_vision_missions
+msgid "Values, Vision, Missions"
+msgstr "Valeurs, Vision, Missions"
+
+#. module: propage_project
+#: model:project.task,name:propage_project.task_work_organization
+msgid "Work organization "
+msgstr "Organisation du travail"
