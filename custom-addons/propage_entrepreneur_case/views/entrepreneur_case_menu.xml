@@ -5,4 +5,7 @@
         <menuitem name="Entrepreneur Team" id="entrepreneur_team_menu" action="action_entrepreneur_team" sequence="2"/>
         <menuitem name="Entrepreneurs" id="entrepreneur_menu" action="action_partner_entrepreneur" sequence="3"/>
     </menuitem>
+    <menuitem name="Projects" id="project_main_menu" parent="propage_base.menu_root">
+        <menuitem name="Projects" id="project_project_menu" action="project.open_view_project_all" sequence="1"/>
+    </menuitem>
 </odoo>
