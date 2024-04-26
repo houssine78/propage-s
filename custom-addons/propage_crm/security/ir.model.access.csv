@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lead_propage_user,access.lead.propage.user,crm.model_crm_lead,propage_base.group_propage_user,1,1,1,0
+access_lead_propage_manager,access.lead.propage.manager,crm.model_crm_lead,propage_base.group_propage_manager,1,1,1,1

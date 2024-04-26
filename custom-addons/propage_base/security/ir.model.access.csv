@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_lead_propage_user,access.lead.propage.user,crm.model_crm_lead,propage_base.group_propage_user,1,1,1,0
-access_lead_propage_manager,access.lead.propage.manager,crm.model_crm_lead,propage_base.group_propage_manager,1,1,1,1
+access_partner_propage_user,access.partner.propage.user,base.model_res_partner,propage_base.group_propage_user,1,1,1,0
+access_partner_propage_manager,access.partner.propage.manager,base.model_res_partner,propage_base.group_propage_manager,1,1,1,1
+access_user_propage_user,access.res.users.propage.user,base.model_res_users,propage_base.group_propage_user,1,0,0,0
+access_user_propage_manager,access.res.users.propage.manager,base.model_res_users,propage_base.group_propage_manager,1,1,0,0
+access_mail_activity_type_propage_user,access.mail.activity.type.propage.user,mail.model_mail_activity_type,propage_base.group_propage_user,1,0,0,0
+access_mail_activity_type_propage_manager,access.mail.activity.type.propage.manager,mail.model_mail_activity_type,propage_base.group_propage_manager,1,1,0,0

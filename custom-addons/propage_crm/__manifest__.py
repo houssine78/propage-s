@@ -13,6 +13,7 @@
         "propage_base",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/crm_stage_data.xml",
         "views/crm_lead.xml"
     ],
