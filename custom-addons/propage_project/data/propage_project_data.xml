@@ -1,0 +1,270 @@
+<odoo>
+    <record id="tag_project_management" model="project.tags">
+        <field name="name">Project management</field>
+    </record>
+    <record id="tag_gouv_org_coll" model="project.tags">
+        <field name="name">Governance and collective organization</field>
+    </record>
+    <record id="tag_stategic_thinking" model="project.tags">
+        <field name="name">Strategic thinking</field>
+    </record>
+    <record id="tag_legal" model="project.tags">
+        <field name="name">Legal</field>
+    </record>
+    <record id="tag_accounting" model="project.tags">
+        <field name="name">Accounting</field>
+    </record>
+    <record id="tag_financial_management" model="project.tags">
+        <field name="name">Financial management</field>
+    </record>
+
+    <record id="project_management" model="project.project">
+        <field name="name">Project template</field>
+        <field name="is_template" eval="True" />
+        <field name="allow_timesheets" eval="False" />
+        <field name="allow_billable" eval="False" />
+    </record>
+
+    <record id="task_diagnosis" model="project.task">
+        <field name="name">Diagnosis of start-up conditions and preliminary meetings</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+    </record>
+    <record id="task_training" model="project.task">
+        <field name="name">Training/coaching in project structuring and management</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+        <field name="description">Validation of social need :
+            Identification
+            validation
+            solution proposals
+        </field>
+    </record>
+    <record id="task_implementation" model="project.task">
+        <field name="name">Solution implementation</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+        <field name="description">Why we work together
+	        How do we work together?
+	        How do we do business together?
+	        Mission, vision, value
+        </field>
+    </record>
+    <record id="task_tools" model="project.task">
+        <field name="name">Project structuring and management tools</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+        <field name="description">Project sheets, bmc, stakeholder mapping, identification of customer needs</field>
+    </record>
+    <record id="task_training_business_plan" model="project.task">
+        <field name="name">Training/coaching in the creation of a business plan</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+        <field name="description">Which tools for which needs (BMC, Business plan, etc.)?
+            Why a business plan?
+            What's in it?
+            Tools for implementation
+        </field>
+    </record>
+    <record id="task_training_financial_projection" model="project.task">
+        <field name="name">Training/coaching in the preparation of financial projections</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+    </record>
+    <record id="task_training_legal" model="project.task">
+        <field name="name">Legal training</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+    </record>
+    <record id="task_support_implementing" model="project.task">
+        <field name="name">Support in implementing identified solutions</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+    </record>
+    <record id="task_bilateral_evaluation" model="project.task">
+        <field name="name">Bilateral end-of-mission evaluation</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_project_management')])]" />
+    </record>
+    
+    <record id="task_values_vision_missions" model="project.task">
+        <field name="name">Values, Vision, Missions</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_gouv_org_coll')])]" />
+    </record>
+    <record id="task_group_organization" model="project.task">
+        <field name="name">Group organization and decision-making</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_gouv_org_coll')])]" />
+    </record>
+    <record id="task_work_organization" model="project.task">
+        <field name="name">Work organization </field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_gouv_org_coll')])]" />
+        <field name="description">Functions
+            Responsibilities
+        </field>
+    </record>
+
+    <record id="task_company_reorganization" model="project.task">
+        <field name="name">Company reorganization - reflection and decision support</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_stategic_thinking')])]" />
+    </record>
+    <record id="task_strategic_orientation" model="project.task">
+        <field name="name">Strategic orientation, training in identifying objectives and translating them into action</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_stategic_thinking')])]" />
+    </record>
+
+    <record id="task_training_legal_structure" model="project.task">
+        <field name="name">Training on the choice of legal structure: characteristics of ASBLs and cooperative societies</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_company_roles" model="project.task">
+        <field name="name">Training on company roles and responsibilities</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_cooperative_society" model="project.task">
+        <field name="name">Functioning of the cooperative society/ASBL and decision-making within corporate bodies</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_acticles_association" model="project.task">
+        <field name="name">Training on the Articles of Association of a cooperative society/ASBL</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_formalities" model="project.task">
+        <field name="name">Training on the formalities of setting up a business and the life of a business</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_accounting_obligations" model="project.task">
+        <field name="name">Accounting and tax obligations</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_business_transfer" model="project.task">
+        <field name="name">Business transfer training</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_transforming_company" model="project.task">
+        <field name="name">Training on transforming a company into another legal form</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_social_economy" model="project.task">
+        <field name="name">Social economy approvals</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_conflict_interest" model="project.task">
+        <field name="name">Conflict of interest procedure training</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_director_obligations" model="project.task">
+        <field name="name">Training on directors' obligations (alarm bell procedure, etc.)</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_business_cessation" model="project.task">
+        <field name="name">Business cessation (sale and liquidation)</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_main_contracts" model="project.task">
+        <field name="name">The main contracts: The main contracts between a company and its partners (customers, suppliers, service providers, workers, lenders, etc.)</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_internal_regulations" model="project.task">
+        <field name="name">Internal regulations</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+    <record id="task_training_shareholder_agreement" model="project.task">
+        <field name="name">Shareholders' agreement</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_legal')])]" />
+    </record>
+
+    <record id="task_training_simplified_accounting" model="project.task">
+        <field name="name">Introduction to simplified accounting (micro-Association)</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_accounting')])]" />
+    </record>
+    <record id="task_training_accounting_basic_concepts" model="project.task">
+        <field name="name">Basic concepts: balance sheet, income statement, PCMN, etc.</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_accounting')])]" />
+    </record>
+    <record id="task_training_analytic_accounting" model="project.task">
+        <field name="name">Setting up analytic accounting</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_accounting')])]" />
+    </record>
+
+    <record id="task_training_financial_health" model="project.task">
+        <field name="name">Method/analysis of health/financial situation: feasibility and viability study</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_financial_basic_concepts" model="project.task">
+        <field name="name">Basic financial concepts: cash flow, profitability, liquidity, capital, etc.</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_business_model" model="project.task">
+        <field name="name">Reflecting on the business model</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_financial_plan" model="project.task">
+        <field name="name">Reflection and elaboration of the financial plan</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_cashflow_plan" model="project.task">
+        <field name="name">Preparing a cash flow plan</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_hr_cost" model="project.task">
+        <field name="name">Estimating the cost of human resources</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_cost_price_evaluation" model="project.task">
+        <field name="name">Evaluation of cost price</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+    <record id="task_training_management_tools" model="project.task">
+        <field name="name">Implementation of management tools</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+        <field name="description">budgeting (general and/or analytical), cash flow planning, subsidy monitoring, economic indicators, etc.</field>
+    </record>
+    <record id="task_training_financial_forecast" model="project.task">
+        <field name="name">Financial forecasts</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+        <field name="description">projected balance sheet, projected income statement, budget</field>
+    </record>
+    <record id="task_training_financial_strategy" model="project.task">
+        <field name="name">Financing strategy</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+        <field name="description">needs, sources, action/mobilization plan and adaptation</field>
+    </record>
+    <record id="task_training_value_estimation" model="project.task">
+        <field name="name">Estimate the value of my business/project (in the event of a sale)</field>
+        <field name="project_id" ref="propage_project.project_management" />
+        <field name="tag_ids" eval="[(6, 0, [ref('propage_project.tag_financial_management')])]" />
+    </record>
+</odoo>
