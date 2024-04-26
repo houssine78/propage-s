@@ -44,3 +44,14 @@ class EntrepreneurCase(models.Model):
     responsible = fields.Many2one('res.users')
     convention_2c = fields.Binary(string="Convention 2C")
     covention_file_name = fields.Char()
+    project_id = fields.Many2one(
+        'project.project',
+        string="Project",
+        copy=False
+    )
+    task_ids = fields.One2many(
+        'project.task',
+        'entrepreneur_case_id',
+        string='Tasks',
+        copy=False
+    )

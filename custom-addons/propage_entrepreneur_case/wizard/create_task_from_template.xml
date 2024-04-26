@@ -1,0 +1,30 @@
+<odoo>
+    <record id="propage_create_tasks_view_form" model="ir.ui.view">
+	    <field name="name">create.task.wizard</field>
+	    <field name="model">create.task.wizard</field>
+	    <field name="arch" type="xml">
+	        <form string="_form">
+	            <group>
+                    <field name="entrepreneur_case_id"/>
+                    <field name="project_id"/>
+	            </group>
+                <notebook>
+                    <page name="tasks" string="Tasks">
+                        <field name="task_ids"/>
+                 </page>
+                </notebook>
+	            <footer>
+	                <button string="Create task" name="create_tasks" type="object" class="btn-primary"/>
+	            </footer>
+	        </form>
+	    </field>
+	</record>
+
+	<record id="propage_create_tasks_wizard_action" model="ir.actions.act_window">
+	    <field name="name">Create tasks</field>
+	    <field name="res_model">create.task.wizard</field>
+	    <field name="view_mode">form</field>
+	    <field name="view_id" ref="propage_entrepreneur_case.propage_create_tasks_view_form"/>
+	    <field name="target">new</field>
+	</record>
+</odoo>

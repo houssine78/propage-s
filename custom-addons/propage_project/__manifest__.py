@@ -12,5 +12,9 @@
         "propage_base",
         "project"
     ],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/propage_project_data.xml"
+    ],
     "installable": True,
 }

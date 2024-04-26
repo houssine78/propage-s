@@ -12,15 +12,17 @@
         "base",
         "project",
         "propage_base",
-        "propage_crm"
+        "propage_crm",
+        "propage_project"
     ],
     "data": [
         "security/ir.model.access.csv",
+        "wizard/create_task_from_template.xml",
         "views/entrepreneur_case.xml",
         "views/entrepreneur_team.xml",
         "views/partner.xml",
         "views/entrepreneur_case_menu.xml",
-        "views/crm_lead.xml"
+        "views/crm_lead.xml",
     ],
     "installable": True,
 }

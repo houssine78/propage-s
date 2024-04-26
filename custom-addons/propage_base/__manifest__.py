@@ -12,8 +12,8 @@
         "propage_community_base"
     ],
     "data": [
-        "security/propage_base_security.xml",
         "security/ir.model.access.csv",
+        "security/propage_base_security.xml",
         "views/propage_base_menu.xml"
     ],
     "installable": True,
