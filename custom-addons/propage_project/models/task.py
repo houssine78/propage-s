@@ -9,3 +9,13 @@ class ProjectTask(models.Model):
     is_template = fields.Boolean(
         related='project_id.is_template',
     )
+    is_fse = fields.Boolean(
+        string="FSE task"
+    )
+    is_wr = fields.Boolean(
+        string="Walloon Region task"
+    )
+    participants = fields.One2many(
+        "training.participant",
+        "task_id"
+    )

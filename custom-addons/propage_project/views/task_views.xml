@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    
+    <record id="view_task_form_propage" model="ir.ui.view">
+        <field name="name">project.task.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <field name="user_ids" position="after">
+                <field name="is_fse" />
+                <field name="is_wr" />
+            </field>
+            <page name="description_page" position="after">
+                <page name="participants" string="Participants" attrs="{'invisible': [('is_fse', '=', False)]}">
+                    <field name="participants">
+                        <tree editable="bottom" string="Training participants">
+                            <field name="participant" />
+                            <field name="state" />
+                            <button name="action_attended" string="Attended" type="object" icon="fa-check"
+                                attrs="{'invisible': [('state', '=', 'attended')]}"/>
+                            <button name="action_missed" string="Missed" type="object" icon="fa-level-down"
+                                attrs="{'invisible': [('state', '=', 'missed')]}"/>
+                            <button name="action_declined" string="Declined" type="object" icon="fa-times"
+                                attrs="{'invisible': [('state', '=', 'declined')]}"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_timesheet_propage">
+        <field name="name">project.task.form.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='date']" position="after">
+                <field name="is_fse" invisible="1" />
+                <field name="timesheeet_type" attrs="{'required': [('is_fse', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

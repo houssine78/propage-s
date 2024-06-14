@@ -5,3 +5,5 @@ access_project_task_user,project.task.propage.user,project.model_project_task,pr
 access_project_task_manager,project.task.propage.manager,project.model_project_task,propage_base.group_propage_manager,1,1,1,1
 access_project_tags_user,project.tags.propage.user,project.model_project_tags,propage_base.group_propage_user,1,1,1,0
 access_project_tags_manager,project.tags.propage.manager,project.model_project_tags,propage_base.group_propage_manager,1,1,1,1
+access_participant_user,participant.propage.user,propage_project.model_training_participant,propage_base.group_propage_user,1,1,1,0
+access_participant_manager,participant.propage.manager,propage_project.model_training_participant,propage_base.group_propage_manager,1,1,1,1

@@ -10,11 +10,13 @@
     "license": "AGPL-3",
     "depends": [
         "propage_base",
-        "project"
+        "project",
+        "hr_timesheet"
     ],
     "data": [
         "security/ir.model.access.csv",
-        "data/propage_project_data.xml"
+        "data/propage_project_data.xml",
+        "views/task_views.xml"
     ],
     "installable": True,
 }
