@@ -22,7 +22,7 @@
         "crm_lead_firstname",
         "dms",
         "hr_timesheet_sheet",
-        "hr_timesheet_begin_end",
+        # "hr_timesheet_begin_end",
         "hr_employee_firstname",
         "project_task_link",
         "project_template"
