@@ -39,6 +39,7 @@
                         </page>
                         <page name="information" string="Administrative info">
                             <group>
+                                <field name="crm_lead_id" readonly="True"/>
                                 <field name="is_fse" />
                                 <field name="is_decree_consultancy_agency" />
                             </group>
