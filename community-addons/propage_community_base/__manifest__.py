@@ -19,13 +19,14 @@
         "partner_contact_birthdate",
         "partner_contact_gender",
         "partner_multi_relation",
+        "partner_contact_nationality",
         "crm_lead_firstname",
         "dms",
         "hr_timesheet_sheet",
-        # "hr_timesheet_begin_end",
         "hr_employee_firstname",
         "project_task_link",
         "project_template"
+        
     ],
     "installable": True,
 }
