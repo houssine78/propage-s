@@ -21,6 +21,7 @@ class TrainingParticpant(models.Model):
         string="Task",
         required = True
     )
+    training_date = fields.Date(string="Date")
 
     def action_attended(self):
         self.write({'state': 'attended'})

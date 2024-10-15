@@ -11,8 +11,12 @@
             </field>
             <page name="description_page" position="after">
                 <page name="participants" string="Participants" attrs="{'invisible': [('is_fse', '=', False)]}">
+                    <group>
+                        <field name="training_time"/>
+                    </group>    
                     <field name="participants">
                         <tree editable="bottom" string="Training participants">
+                            <field name="training_date" />
                             <field name="participant" />
                             <field name="state" />
                             <button name="action_attended" string="Attended" type="object" icon="fa-check"
