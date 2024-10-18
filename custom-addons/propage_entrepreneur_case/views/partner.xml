@@ -9,15 +9,29 @@
                 <field name="fse_id" />
             </xpath>
             
-            <!-- <page name="contact_addresses" position="after">
-                <page string="Propage-s Information" name="propage">
-                    <form>
-                        <sheet>
-                            
-                        </sheet>
-                    </form>
+            <page name="contact_addresses" position="after">
+                <page string="FSE Information" name="fse">
+                    <group>
+	                    <group>
+		                    <field name="professional_status" />
+		                    <field name="inactive_period" />
+		                    <field name="education_level" />
+		                    <field name="action_start_date" />
+		                    <field name="action_end_date" />
+		                    <field name="cumulive_total_hours" />
+	                    </group>
+	                    <group>
+		                    <field name="end_type" />
+		                    <field name="end_type_2" />
+		                    <field name="acquired" />
+	                        <field name="comments" />
+		                    <field name="ineligble_afse" />
+		                    <field name="comments_afse" />
+		                    <field name="ineligibility_reason" />
+	                    </group>
+                    </group>
                 </page>
-            </page> -->
+            </page>
 		</field>
 	</record>
 

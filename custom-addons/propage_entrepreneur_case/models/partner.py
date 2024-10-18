@@ -63,7 +63,7 @@ class ResPartner(models.Model):
         ],
         string="End type (priority 5)"
     )
-    aquired = fields.Selection([
+    acquired = fields.Selection([
         ('recognized_qualification', 'Obtaining a recognized qualification'),
         ('achivement_cert', 'Certificate of achievement'),
         ('participation_cert', 'Certificate of participation'),
@@ -72,6 +72,6 @@ class ResPartner(models.Model):
         string="Achievements at end of action"
     )
     comments = fields.Char(string="Comments")
-    ineligble_AFSE = fields.Boolean(string="participant made ineligible by AFSE")
+    ineligble_afse = fields.Boolean(string="participant made ineligible by AFSE")
     comments_afse = fields.Char(string="Comments AFSE")
     ineligibility_reason = fields.Char(string="Reason for ineligibility")

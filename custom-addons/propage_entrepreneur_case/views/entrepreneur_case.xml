@@ -8,7 +8,8 @@
             <form string="Entrepreneur Case">
                 <header>
                     <button name="%(propage_create_tasks_wizard_action)d" string="Create tasks"
-                                type="action" context="{'default_entrepreneur_case_id': active_id}"/>
+                            type="action" context="{'default_entrepreneur_case_id': active_id}" />
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
                 </header>
                 <sheet>
                     <group>
@@ -17,6 +18,9 @@
                            <field name="partner_id" />
                            <field name="partner_email" />
                            <field name="partner_mobile" />
+                           <field name="crm_lead_id" readonly="True"/>
+                           <field name="is_fse" />
+                           <field name="is_decree_consultancy_agency" />
                         </group>
                         <group>
                            <field name="entrepreneur_team_id" />
@@ -39,10 +43,30 @@
                         </page>
                         <page name="information" string="Administrative info">
                             <group>
-                                <field name="crm_lead_id" readonly="True"/>
-                                <field name="is_fse" />
-                                <field name="is_decree_consultancy_agency" />
-                            </group>
+                                <group string="Intervention info">
+                                    <field name="merchant_social_economy" />
+                                    <field name="interventio_type" />
+                                    <field name="intervention_start_date" />
+                                    <field name="intervention_end_date" />
+                                    <field name="closing_type" />
+                                </group>
+                                <group string="Type of intervention">
+                                    <field name="feasibility_study" />
+                                    <field name="legal_analysis" />
+                                    <field name="financial_analysis" />
+                                    <field name="rh" />
+                                    <field name="financing_file_support" />
+                                    <field name="others" />
+                                </group>
+                                <group string="Intervention summary">
+                                    <field name="hours_performed" />
+                                    <field name="total_hours_performed" />
+                                    <field name="hours_invoiced" />
+                                    <field name="total_hours_invoiced" />
+                                    <field name="created_jobs" />
+                                    <field name="sowescom_collaboration" />
+                                </group>
+                            </group>    
                         </page>
                         <page name="project" string="Project">
                             <label for="project_id" string="Project" />
