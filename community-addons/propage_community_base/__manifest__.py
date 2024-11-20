@@ -21,7 +21,6 @@
         "partner_multi_relation",
         "partner_contact_nationality",
         "crm_lead_firstname",
-        "dms",
         "hr_timesheet_sheet",
         "hr_employee_firstname",
         "project_task_link",
