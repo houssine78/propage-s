@@ -10,7 +10,7 @@
                 <field name="is_wr" />
             </field>
             <page name="description_page" position="after">
-                <page name="participants" string="Participants" attrs="{'invisible': [('is_fse', '=', False)]}">
+                <page name="participants" string="Participants" invisible="is_fse == False">
                     <group>
                         <field name="training_time"/>
                     </group>    
@@ -19,12 +19,9 @@
                             <field name="training_date" />
                             <field name="participant" />
                             <field name="state" />
-                            <button name="action_attended" string="Attended" type="object" icon="fa-check"
-                                attrs="{'invisible': [('state', '=', 'attended')]}"/>
-                            <button name="action_missed" string="Missed" type="object" icon="fa-level-down"
-                                attrs="{'invisible': [('state', '=', 'missed')]}"/>
-                            <button name="action_declined" string="Declined" type="object" icon="fa-times"
-                                attrs="{'invisible': [('state', '=', 'declined')]}"/>
+                            <button name="action_attended" string="Attended" type="object" icon="fa-check" invisible="state == 'attended'" />
+                            <button name="action_missed" string="Missed" type="object" icon="fa-level-down" invisible="state == 'missed'" />
+                            <button name="action_declined" string="Declined" type="object" icon="fa-times" invisible="state == 'declined'" />
                         </tree>
                     </field>
                 </page>

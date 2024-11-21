@@ -5,9 +5,9 @@
 	    <field name="model">crm.lead</field>
 	    <field name="inherit_id" ref="crm.crm_lead_view_form"/>
 	    <field name="arch" type="xml">
-            <button name="action_set_lost" position="after">
+            <button name="action_set_won_rainbowman" position="after">
                 <button name="action_create_case" string="Create Case" type="object" title="Create Entrepreneur Case"
-		                attrs="{'invisible': [('show_create_case', '=', False)]}"/>
+		               invisible="show_create_case == False"/>
 	        </button>
             <page name="extra" position="after">
                 <page name="entrepreneur_case" string="Entrepeneur Cases">
