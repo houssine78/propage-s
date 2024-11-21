@@ -3,7 +3,7 @@
 
 {
     "name": "Propage-s Custom CRM Module",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "CRM",
     "author": "Open Architects Consulting",
     "website": "https://www.openarchitecsconsulting.com",

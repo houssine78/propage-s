@@ -5,7 +5,7 @@
     "name": "Propage-s Custom Profile Module",
     "description": "This module install all the required"
     " custom module for the propage project",
-    "version": "16.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Base",
     "author": "Open Architects Consulting",
     "website": "https://www.openarchitecsconsulting.com",

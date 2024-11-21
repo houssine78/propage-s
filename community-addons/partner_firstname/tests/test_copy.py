@@ -9,8 +9,9 @@ class UserCase(TransactionCase, MailInstalled):
     """Test ``res.users``."""
 
     def setUp(self):
-        super(UserCase, self).setUp()
+        super().setUp()
         self.create_original()
+        self.create_original_multinames()
 
     def create_original(self):
         self.original = self.env["res.users"].create(
@@ -22,8 +23,22 @@ class UserCase(TransactionCase, MailInstalled):
             }
         )
 
+    def create_original_multinames(self):
+        self.original_multinames = (
+            self.env["res.users"]
+            .with_context(no_reset_password=True)
+            .create(
+                {
+                    "firstname": "Firstname1 Firstname2",
+                    "lastname": "Lastname1 Lastname2",
+                    "name": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                    "login": "firstname.multi",
+                }
+            )
+        )
+
     def tearDown(self):
-        super(UserCase, self).tearDown()
+        super().tearDown()
 
     def compare(self, copy):
         self.assertEqual(copy.lastname, "Lastname2")
@@ -50,3 +65,31 @@ class UserCase(TransactionCase, MailInstalled):
             }
         )
         self.compare(copy)
+
+    def test_copy_multiple_names(self):
+        copy = self.original_multinames.partner_id.copy()
+        self.assertRecordValues(
+            copy,
+            [
+                {
+                    "firstname": "Firstname1 Firstname2",
+                    "lastname": "Lastname1 Lastname2 (copy)",
+                    "name": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                }
+            ],
+        )
+
+    def test_copy_multiple_names_company(self):
+        partner = self.original_multinames.partner_id
+        partner.is_company = True
+        copy = partner.copy()
+        self.assertRecordValues(
+            copy,
+            [
+                {
+                    "firstname": False,
+                    "lastname": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                    "name": "Firstname1 Firstname2 Lastname1 Lastname2 (copy)",
+                }
+            ],
+        )

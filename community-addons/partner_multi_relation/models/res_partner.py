@@ -130,7 +130,7 @@ class ResPartner(models.Model):
         return [("relation_all_ids.other_partner_id.category_id", operator, value)]
 
     @api.model
-    def search(self, args, offset=0, limit=None, order=None, count=False):
+    def search(self, args, offset=0, limit=None, order=None):
         """Inject searching for current relation date if we search for
         relation properties and no explicit date was given.
         """
@@ -164,7 +164,6 @@ class ResPartner(models.Model):
             offset=offset,
             limit=limit,
             order=order,
-            count=count,
         )
 
     def get_partner_type(self):
@@ -192,14 +191,12 @@ class ResPartner(models.Model):
             context = action.get("context", "{}").strip()[1:-1]
             elements = context.split(",") if context else []
             to_add = [
-                """'search_default_this_partner_id': {0},
-                        'default_this_partner_id': {0},
+                f"""'search_default_this_partner_id': {contact.id},
+                        'default_this_partner_id': {contact.id},
                         'active_model': 'res.partner',
-                        'active_id': {0},
-                        'active_ids': [{0}],
-                        'active_test': False""".format(
-                    contact.id
-                )
+                        'active_id': {contact.id},
+                        'active_ids': [{contact.id}],
+                        'active_test': False"""
             ]
             context = "{" + ", ".join(elements + to_add) + "}"
             action["context"] = context

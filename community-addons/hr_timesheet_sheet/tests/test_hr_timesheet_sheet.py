@@ -14,7 +14,7 @@ from odoo.tests.common import Form, TransactionCase
 from ..models.hr_timesheet_sheet import empty_name
 
 
-class TestHrTimesheetSheet(TransactionCase):
+class TestHrTimesheetSheetCommon(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -233,6 +233,8 @@ class TestHrTimesheetSheet(TransactionCase):
             }
         )
 
+
+class TestHrTimesheetSheet(TestHrTimesheetSheetCommon):
     def test_0(self):
         sheet_form = Form(self.sheet_model.with_user(self.user))
         self.assertEqual(len(sheet_form.line_ids), 0)
@@ -373,7 +375,7 @@ class TestHrTimesheetSheet(TransactionCase):
                 line_form.unit_amount = 1.0
                 self.assertEqual(len(sheet.new_line_ids), 1)
         line2 = fields.first(
-            sheet.line_ids.filtered(lambda l: l.date != timesheet.date)
+            sheet.line_ids.filtered(lambda line: line.date != timesheet.date)
         )
         self.assertEqual(line2.unit_amount, 1.0)
         self.assertEqual(len(sheet.timesheet_ids), 2)
@@ -473,7 +475,7 @@ class TestHrTimesheetSheet(TransactionCase):
         self.assertEqual(timesheet_1_or_2.unit_amount, 1.0)
         self.assertEqual(timesheet_3.unit_amount, 0.0)
 
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount != 0.0)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount != 0.0)
         self.assertEqual(len(line), 1)
         self.assertEqual(line.unit_amount, 1.0)
 
@@ -526,7 +528,7 @@ class TestHrTimesheetSheet(TransactionCase):
             pass  # trigger edit and save
         self.assertEqual(len(sheet.line_ids), 7)
         self.assertEqual(len(sheet.timesheet_ids), 2)
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount != 0.0)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount != 0.0)
         self.assertEqual(line.unit_amount, 4.0)
 
         timesheet_2.name = empty_name
@@ -622,7 +624,7 @@ class TestHrTimesheetSheet(TransactionCase):
             pass  # trigger edit and save
         self.assertEqual(len(sheet.line_ids), 7)
         self.assertEqual(len(sheet.timesheet_ids), 5)
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount != 0.0)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount != 0.0)
         self.assertEqual(line.unit_amount, 10.0)
 
         timesheet_2.name = empty_name
@@ -652,7 +654,7 @@ class TestHrTimesheetSheet(TransactionCase):
                 line_form.unit_amount = 3.0
                 self.assertEqual(len(sheet.new_line_ids), 1)
         self.assertEqual(len(sheet.timesheet_ids), 4)
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount != 0.0)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount != 0.0)
         self.assertEqual(line.unit_amount, 3.0)
 
         timesheet_3_4_and_5 = self.aal_model.search(
@@ -676,7 +678,7 @@ class TestHrTimesheetSheet(TransactionCase):
         with Form(sheet.with_user(self.user)):
             pass  # trigger edit and save
         self.assertEqual(len(sheet.timesheet_ids), 4)
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount != 0.0)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount != 0.0)
         self.assertEqual(len(line), 1)
         self.assertEqual(line.unit_amount, 5.0)
 
@@ -713,13 +715,6 @@ class TestHrTimesheetSheet(TransactionCase):
 
     def test_8(self):
         """Multicompany test"""
-        employee_2 = self.employee_model.create(
-            {
-                "name": "Test User 2",
-                "user_id": self.user_2.id,
-                "company_id": self.user_2.company_id.id,
-            }
-        )
         department_2 = self.department_model.create(
             {"name": "Department test 2", "company_id": self.user_2.company_id.id}
         )
@@ -738,8 +733,6 @@ class TestHrTimesheetSheet(TransactionCase):
             with Form(sheet.with_user(self.user)) as sheet_form:
                 with self.assertRaises(AssertionError):
                     sheet_form.company_id = self.user_2.company_id.id
-                with self.assertRaises(AssertionError):
-                    sheet_form.employee_id = employee_2
                 with self.assertRaises(AssertionError):
                     sheet_form.department_id = department_2
                 sheet_form.add_line_project_id = project_3
@@ -866,7 +859,7 @@ class TestHrTimesheetSheet(TransactionCase):
         self.assertEqual(len(sheet.timesheet_ids), 1)
         self.assertEqual(len(sheet.line_ids), 7)
 
-        line = sheet.line_ids.filtered(lambda l: l.unit_amount)
+        line = sheet.line_ids.filtered(lambda line: line.unit_amount)
         self.assertEqual(len(line), 1)
         self.assertEqual(line.unit_amount, 2.0)
 
@@ -1017,14 +1010,17 @@ class TestHrTimesheetSheet(TransactionCase):
 
     def test_employee_no_user(self):
         sheet_form = Form(self.sheet_model.with_user(self.user))
+        # testing create
         with self.assertRaises(UserError):
             sheet_form.employee_id = self.employee_no_user
             sheet_form.save()
 
+        # testing write
         sheet = Form(self.sheet_model.with_user(self.user)).save()
-        with Form(sheet.with_user(self.user)) as sheet_form:
-            with self.assertRaises(AssertionError):
+        with self.assertRaises(UserError):
+            with Form(sheet.with_user(self.user)) as sheet_form:
                 sheet_form.employee_id = self.employee_no_user
+                sheet_form.save()
 
     def test_workflow(self):
         sheet = Form(self.sheet_model.with_user(self.user)).save()
@@ -1086,3 +1082,24 @@ class TestHrTimesheetSheet(TransactionCase):
         sheet_form.date_start = date(2019, 12, 29)
         sheet_form.date_end = date(2020, 1, 5)
         self.assertEqual(sheet_form.name, "Weeks 52, 2019 - 01, 2020")
+
+    def test_onchange_project_id_merging_timesheets(self):
+        """Test that we don't try merging timesheets when in onchange"""
+        sheet = Form(self.sheet_model.with_user(self.user)).save()
+        aal1 = self.aal_model.create(
+            {
+                "project_id": self.project_1.id,
+                "date": sheet.date_start,
+                "name": "/",
+                "unit_amount": 1,
+                "employee_id": self.employee.id,
+            }
+        )
+        with Form(sheet) as sheet_form:
+            aal2 = aal1.copy()
+            sheet_form.save()
+            sheet_form.add_line_project_id = self.project_1
+            self.assertTrue(aal1.exists())
+            self.assertTrue(aal2.exists())
+        # but be sure they are merged on save
+        self.assertEqual(len((aal1 + aal2).exists()), 1)
