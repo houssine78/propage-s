@@ -1,0 +1,17 @@
+<odoo>
+    <record id="view_calendar_event_form" model="ir.ui.view">
+        <field name="name">calendar.event.form</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <field name="res_id" position="before">
+                <field name="time_registered" invisible="1" />
+            </field>
+            <div name="button_box" position="inside">
+                <button icon="fa-bars" string="Register time" title="Register time"
+                        type="action" name="%(action_view_calendar_time_registration_wizard)d"
+                        invisible="time_registered"/>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -11,12 +11,15 @@
     "depends": [
         "propage_base",
         "project",
+        "calendar",
         "hr_timesheet",
         "hr_timesheet_sheet"
     ],
     "data": [
         "security/ir.model.access.csv",
         "data/propage_project_data.xml",
+        "wizard/calendar_time_registration_view.xml",
+        "views/calendar_views.xml",
         "views/task_views.xml",
         "views/hr_timesheet_sheet_views.xml"
     ],
