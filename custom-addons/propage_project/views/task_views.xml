@@ -12,12 +12,12 @@
             <page name="description_page" position="after">
                 <page name="participants" string="Participants" invisible="is_fse == False">
                     <group>
-                        <field name="training_time"/>
-                    </group>    
+                        <field name="participant_count" />
+                    </group>
                     <field name="participants">
                         <tree editable="bottom" string="Training participants">
                             <field name="training_date" />
-                            <field name="participant" />
+                            <field name="participant_id" />
                             <field name="state" />
                             <button name="action_attended" string="Attended" type="object" icon="fa-check" invisible="state == 'attended'" />
                             <button name="action_missed" string="Missed" type="object" icon="fa-level-down" invisible="state == 'missed'" />
@@ -36,12 +36,44 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='date']" position="after">
                 <field name="is_fse" invisible="1" />
-                <field name="timesheeet_type" attrs="{'required': [('is_fse', '=', True)]}" />
+                <field name="timesheet_type" attrs="{'required': [('is_fse', '=', True)]}" />
             </xpath>
             <xpath expr="//field[@name='timesheet_ids']/form//field[@name='date']" position="after">
                 <field name="is_fse" invisible="1" />
-                <field name="timesheeet_type" attrs="{'required': [('is_fse', '=', True)]}" />
+                <field name="timesheet_type" attrs="{'required': [('is_fse', '=', True)]}" />
             </xpath>
         </field>
     </record>
+    
+     <record id="project.act_project_project_2_project_task_all" model="ir.actions.act_window">
+        <field name="context">{
+            'active_model': 'project.project',
+            'default_project_id': active_id,
+            'show_project_update': True,
+            'search_default_open_tasks': 1,
+            'search_default_tags': 1
+        }</field>
+    </record>
+
+    <record id="project.project_task_tree_action_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="5"/>
+    </record>
+    
+    <record id="project.action_view_task" model="ir.actions.act_window">
+        <field name="view_mode">tree,form,kanban,calendar,pivot,graph,activity</field>
+        <field name="view_id" ref="project.open_view_my_tasks_list_view" />
+        <field name="context">{'search_default_my_tasks': 1, 'search_default_tags': 1}</field>
+    </record>
+
+    <record id="project.action_view_all_task" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_open_tasks': 1,
+            'default_user_ids': [(4, uid)],
+            'search_default_tags': 1
+        }
+        </field>
+    </record>
+
+    <menuitem id="project.menu_project_management_my_tasks" action="project.action_view_my_task" parent="project.menu_project_management"/>
+    
 </odoo>

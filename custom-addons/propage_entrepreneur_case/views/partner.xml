@@ -7,6 +7,8 @@
             <xpath expr="//form//field[@name='firstname']" position="after">
                 <field name="is_entrepreneur" />
                 <field name="fse_id" />
+                <field name="time_fse_p1" />
+                <field name="time_fse_p2" />
             </xpath>
             
             <page name="contact_addresses" position="after">

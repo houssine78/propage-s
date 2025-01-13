@@ -4,7 +4,7 @@ from odoo import fields, models
 class TrainingParticpant(models.Model):
     _name = "training.participant"
 
-    participant = fields.Many2one(
+    participant_id = fields.Many2one(
         "res.partner",
         required = True,
         domain = [('is_entrepreneur', '=', True)]
@@ -16,12 +16,17 @@ class TrainingParticpant(models.Model):
         ('missed', 'Missed')],
         default='draft'
     )
+    training_date = fields.Date(string="Date")
     task_id = fields.Many2one(
         "project.task",
         string="Task",
         required = True
     )
-    training_date = fields.Date(string="Date")
+    timesheet_ids = fields.One2many(
+        related='task_id.timesheet_ids',
+        comodel_name='account.analytic.line',
+        string='Timesheets'
+    )
 
     def action_attended(self):
         self.write({'state': 'attended'})
