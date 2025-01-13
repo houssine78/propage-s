@@ -27,6 +27,10 @@ class TrainingParticpant(models.Model):
         comodel_name='account.analytic.line',
         string='Timesheets'
     )
+    sent_by_company = fields.Boolean(
+        string="Sent by his company",
+        help="The participant has been sent by his company"
+    )
 
     def action_attended(self):
         self.write({'state': 'attended'})

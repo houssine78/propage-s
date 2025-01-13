@@ -18,6 +18,7 @@
                         <tree editable="bottom" string="Training participants">
                             <field name="training_date" />
                             <field name="participant_id" />
+                            <field name="sent_by_company" />
                             <field name="state" />
                             <button name="action_attended" string="Attended" type="object" icon="fa-check" invisible="state == 'attended'" />
                             <button name="action_missed" string="Missed" type="object" icon="fa-level-down" invisible="state == 'missed'" />
