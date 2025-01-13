@@ -32,4 +32,3 @@ class ResPartner(models.Model):
                         task_time_fse_p2 += line.unit_amount / participant_count
             partner.time_fse_p1 = task_time_fse_p1
             partner.time_fse_p2 = task_time_fse_p2
-            

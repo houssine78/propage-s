@@ -7,7 +7,7 @@
 		<field name="arch" type="xml">
             <xpath expr="/form/sheet/notebook//field[@name='timesheet_ids']/tree/field[@name='task_id']" position="before">
                 <field name="is_fse" invisible="1" />
-                <field name="timesheeet_type" attrs="{'readonly': [('is_fse', '=', False)]}"/>
+                <field name="timesheet_type" attrs="{'readonly': [('is_fse', '=', False)]}"/>
             </xpath>
 		</field>
 	</record>
