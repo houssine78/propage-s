@@ -14,7 +14,6 @@ class ResPartner(models.Model):
     )
 
     def _compute_time_participant(self):
-        partners = self.filtered(lambda r: r.is_entrepreneur)
         for partner in self:
             trainings = partner.trainings.filtered(
                 lambda r: r.state in ['attended', 'missed']
