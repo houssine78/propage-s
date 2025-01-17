@@ -1,6 +1,5 @@
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
-from test.test_pdb import do_something
 
 class TimeRegistrationWizard(models.TransientModel):
     _name = 'calendar.time.registration.wizard'
