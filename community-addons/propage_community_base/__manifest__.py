@@ -23,7 +23,6 @@
         "crm_lead_firstname",
         "hr_timesheet_sheet",
         "hr_employee_firstname",
-        #"project_task_link",
         "project_template"
         
     ],
