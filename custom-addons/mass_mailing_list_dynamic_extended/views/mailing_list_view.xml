@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="mailing_list_dynamic_extended_view_form" model="ir.ui.view">
+        <field name="name">Add sync stuff</field>
+        <field name="model">mailing.list</field>
+        <field name="inherit_id" ref="mass_mailing_list_dynamic.mailing_list_view_form" />
+        <field name="arch" type="xml">
+            <field name="sync_domain" position="before">
+                <field name="newsletter_traced_action" />
+                <field name="mass_mailing_id" invisible="newsletter_traced_action == False"/>
+                <field name="traced_action" invisible="newsletter_traced_action == False"/>
+            </field>
+            
+            <field name="sync_domain" position="attributes">
+                <attribute name="invisible">
+                    newsletter_traced_action == True
+                </attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
