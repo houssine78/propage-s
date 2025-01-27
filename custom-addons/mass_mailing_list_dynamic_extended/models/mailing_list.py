@@ -1,5 +1,5 @@
-from odoo import fields, models
-
+from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval
 
 class MassMailingList(models.Model):
     _inherit = "mailing.list"
@@ -27,7 +27,7 @@ class MassMailingList(models.Model):
         massmailing = self.mass_mailing_id
         if self.traced_action == 'reply':
             found_traces = massmailing.mailing_trace_ids.filtered(lambda trace: trace.trace_status == 'reply')
-        elif self.traced_action == 'delivered':
+        elif self.traced_action == 'not_open':
             found_traces = massmailing.mailing_trace_ids.filtered(lambda trace: trace.trace_status == 'sent')
         elif self.traced_action == 'open':
             found_traces = massmailing.mailing_trace_ids.filtered(
@@ -60,7 +60,7 @@ class MassMailingList(models.Model):
             else:
                 sync_domain = [("email", "!=", False)] + safe_eval(one.sync_domain)
                 desired_partners = Partner.search(sync_domain)
-            # Detach or remove undesired contacts when synchronization is full
+            # Detach or remove undesired contacts when synchronisation is full
             if one.sync_method == "full":
                 contact_to_detach = one.contact_ids.filtered(
                     lambda r: r.partner_id not in desired_partners
@@ -84,3 +84,10 @@ class MassMailingList(models.Model):
             one.is_synced = True
         # Invalidate cached contact count
         dynamic.invalidate_recordset(["contact_count"])
+        
+    @api.onchange("dynamic", "sync_method", "sync_domain",
+                  "newsletter_traced_action", "mass_mailing_id",
+                  "traced_action")
+    def _onchange_dynamic(self):
+        if self.dynamic:
+            self.is_synced = False
