@@ -1,6 +1,7 @@
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
+
 class TimeRegistrationWizard(models.TransientModel):
     _name = 'calendar.time.registration.wizard'
     _description = 'Create Timesheet Entries for attendees'
@@ -31,6 +32,7 @@ class TimeRegistrationWizard(models.TransientModel):
         
         event = self.env['calendar.event'].browse(self.env.context['active_id'])
         default['event_id'] = event.id
+        default['event_id'] = event.duration
 
         line_vals = []
         for partner in event.partner_ids:
@@ -53,7 +55,9 @@ class TimeRegistrationWizard(models.TransientModel):
             train_part_vals = {}
             if line.is_employee:
                 if line.is_fse:
-                    anal_line_vals['timesheeet_type'] = line.timesheeet_type
+                    if not line.timesheet_type:
+                        raise UserError(_('You need to give a timesheet_type for the employee'))
+                    anal_line_vals['timesheet_type'] = line.timesheet_type
                 anal_line_vals['date'] = line.date
                 anal_line_vals['employee_id'] = line.partner_id.employee_ids[0].id
                 anal_line_vals['name'] = line.name
@@ -62,13 +66,13 @@ class TimeRegistrationWizard(models.TransientModel):
 
                 anal_line.create(anal_line_vals)
             else:
-                train_part_vals['participant'] = line.partner_id.id
+                train_part_vals['participant_id'] = line.partner_id.id
                 train_part_vals['task_id'] = line.time_registration_id.task_id.id
                 train_part_vals['training_date'] = line.date
                 train_part_vals['state'] = 'attended'
                 train_part.create(train_part_vals)
-                line.time_registration_id.task_id.training_time = line.duration 
         self.event_id.time_registered = True
+
 
 class TimeRegistrationLineWizard(models.TransientModel):
     _name = 'calendar.time.registration.line.wizard'
@@ -80,11 +84,10 @@ class TimeRegistrationLineWizard(models.TransientModel):
     time_registration_id = fields.Many2one("calendar.time.registration.wizard")
     is_employee = fields.Boolean(related="partner_id.is_employee")
     is_fse = fields.Boolean(related="time_registration_id.task_id.is_fse")
-    timesheeet_type = fields.Selection([
+    timesheet_type = fields.Selection([
         ('p1', 'P1'),
         ('p2', 'P2'),
-        ('p3', 'P3'),
-        ],
+        ('p3', 'P3')],
         string="Type",
     )
 

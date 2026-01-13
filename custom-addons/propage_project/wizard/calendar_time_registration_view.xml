@@ -8,17 +8,17 @@
                 <form string="Time registration">
                     <group>
                         <field name="project_id"/>
-                        <field name="task_id"/>
+                        <field name="task_id" domain="[('project_id', '=', project_id)]"/>
                     </group>
                     <notebook>
-                        <page name="attendees" string="Attendees" groups="base.group_no_one">
+                        <page name="attendees" string="Attendees">
                             <field name="registration_lines" widget="one2many" mode="tree">
                                 <tree string="Attendees details" editable="top">
                                     <field name="is_employee" readonly="1"/>
                                     <field name="duration" required="1" widget="float_time"/>
                                     <field name="date" required="1"/>
                                     <field name="is_fse" readonly="1"/>
-                                    <field name="timesheeet_type" readonly="not is_employee or not is_fse"/>
+                                    <field name="timesheet_type" readonly="not is_employee or not is_fse" required="is_employee and is_fse"/>
                                     <field name="partner_id" required="1"/>
                                     <field name="name" readonly="not is_employee"/>
                                 </tree>
