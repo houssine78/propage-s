@@ -9,7 +9,7 @@ class Lead(models.Model):
     case_ids = fields.One2many(
         "entrepreneur.case",
         "crm_lead_id",
-        string="Entrepreneur Case"
+        string="Intern Case"
     )
     case_created = fields.Boolean(compute="compute_case_created")
     show_create_case = fields.Boolean(compute="compute_show_create_case", store=True)

@@ -16,5 +16,6 @@ class EntrepreneurProjectTeam(models.Model):
     )
     entrepreneur_case_ids = fields.One2many(
         "entrepreneur.case",
-        "entrepreneur_team_id"
+        "entrepreneur_team_id",
+        string="Intern Case"
     )

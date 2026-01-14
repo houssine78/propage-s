@@ -6,5 +6,5 @@ class ProjectTask(models.Model):
 
     entrepreneur_case_id = fields.Many2one(
         'entrepreneur.case',
-        string="Entrepeneur case"
+        string="Intern case"
     )

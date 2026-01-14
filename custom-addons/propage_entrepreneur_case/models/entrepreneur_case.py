@@ -23,7 +23,7 @@ class EntrepreneurCase(models.Model):
     )
     entrepreneur_team_id = fields.Many2one(
         "entrepreneur.team",
-        string="Entrepreneur team"
+        string="Intern team"
     )
     team_leader_id = fields.Many2one(
         related="entrepreneur_team_id.team_leader_id"
@@ -101,4 +101,4 @@ class EntrepreneurCase(models.Model):
         string="Hours invoiced (since the start)"
     )
     created_jobs = fields.Float()
-    sowescom_collaboration  = fields.Float()
+    sowescom_collaboration = fields.Float()

@@ -6,7 +6,7 @@ class create_task_wizard(models.TransientModel):
 
     entrepreneur_case_id = fields.Many2one(
         'entrepreneur.case',
-        string="Entrepreneur case",
+        string="Intern case",
         readonly=True
     )
     project_id = fields.Many2one(
@@ -21,7 +21,7 @@ class create_task_wizard(models.TransientModel):
 
     def create_tasks(self):
         if not self.project_id:
-            vals={
+            vals = {
                 'name': self.entrepreneur_case_id.name,
                 'partner_id': self.entrepreneur_case_id.partner_id.id
             }
