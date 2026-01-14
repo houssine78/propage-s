@@ -21,7 +21,8 @@
         "wizard/calendar_time_registration_view.xml",
         "views/calendar_views.xml",
         "views/task_views.xml",
-        "views/hr_timesheet_sheet_views.xml"
+        "views/hr_timesheet_sheet_views.xml",
+        "views/partner_views.xml"
     ],
     "installable": True,
 }

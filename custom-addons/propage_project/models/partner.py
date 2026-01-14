@@ -1,33 +1,43 @@
 # Copyright 2023 Open Architects Consulting SRL (https://www.openarchitecsconsulting.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import fields, models
+from odoo import api, fields, models
 
 
-class ResPartner(models.Model):
+class Partner(models.Model):
     _inherit = "res.partner"
 
-    time_fse_p1 = fields.Float(compute="_compute_time_participant")
-    time_fse_p2 = fields.Float(compute="_compute_time_participant")
+    fse_time_log_ids = fields.One2many('fse.time.log', 'partner_id')
     trainings = fields.One2many(
         'training.participant',
         'participant_id'
     )
 
-    def _compute_time_participant(self):
+    @api.model_create_multi
+    def create(self, vals_list):
+        partners = super(Partner, self).create(vals_list)
+        year = fields.Date.today().year
+        
+        for partner in partners:
+            if partner.is_entrepreneur:
+                fse_vals_list = [
+                    {'partner_id': partner.id, 'year': str(year)},
+                    {'partner_id': partner.id, 'year': str(year - 1)},
+                    {'partner_id': partner.id, 'year': str(year - 2)},
+                ]
+                self.env['fse.time.log'].create(fse_vals_list)
+        return partners
+
+    def write(self, vals):
+        res = super(Partner, self).write(vals)
+
+        year = fields.Date.today().year
+
         for partner in self:
-            trainings = partner.trainings.filtered(
-                lambda r: r.state in ['attended', 'missed']
-            )
-            task_time_fse_p1 = 0.0
-            task_time_fse_p2 = 0.0
-            for training in trainings:
-                participant_count = training.task_id.participant_count
-                if participant_count == 0:
-                    break
-                for line in training.timesheet_ids:
-                    if line.timesheet_type == 'p1':
-                        task_time_fse_p1 += line.unit_amount
-                    elif line.timesheet_type == 'p2':
-                        task_time_fse_p2 += line.unit_amount / participant_count
-            partner.time_fse_p1 = task_time_fse_p1
-            partner.time_fse_p2 = task_time_fse_p2
+            if partner.is_entrepreneur and len(partner.fse_time_log_ids) == 0:
+                fse_vals_list = [
+                    {'partner_id': partner.id, 'year': str(year)},
+                    {'partner_id': partner.id, 'year': str(year - 1)},
+                    {'partner_id': partner.id, 'year': str(year - 2)},
+                ]
+                self.env['fse.time.log'].create(fse_vals_list)
+        return res

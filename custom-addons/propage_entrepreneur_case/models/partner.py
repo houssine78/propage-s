@@ -6,7 +6,7 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    is_entrepreneur = fields.Boolean()
+    is_entrepreneur = fields.Boolean(string="Is intern")
     fse_id = fields.Integer()
     professional_status = fields.Selection([
         ('employee', 'Employee'),
