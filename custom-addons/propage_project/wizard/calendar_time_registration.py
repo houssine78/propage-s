@@ -63,6 +63,7 @@ class TimeRegistrationWizard(models.TransientModel):
                 anal_line_vals['name'] = line.name
                 anal_line_vals['task_id'] = line.time_registration_id.task_id.id
                 anal_line_vals['unit_amount'] = line.duration
+                anal_line_vals['customer_id'] = line.customer_id.id
 
                 anal_line.create(anal_line_vals)
             else:
@@ -90,4 +91,4 @@ class TimeRegistrationLineWizard(models.TransientModel):
         ('p3', 'P3')],
         string="Type",
     )
-
+    customer_id = fields.Many2one('res.partner')

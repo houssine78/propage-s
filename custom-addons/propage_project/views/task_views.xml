@@ -38,10 +38,12 @@
             <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='date']" position="after">
                 <field name="is_fse" invisible="1" />
                 <field name="timesheet_type" attrs="{'required': [('is_fse', '=', True)]}" />
+                <field name="customer_id" readonly="is_fse == True" />
             </xpath>
             <xpath expr="//field[@name='timesheet_ids']/form//field[@name='date']" position="after">
                 <field name="is_fse" invisible="1" />
                 <field name="timesheet_type" attrs="{'required': [('is_fse', '=', True)]}" />
+                <field name="customer_id" readonly="is_fse == True" />
             </xpath>
         </field>
     </record>
