@@ -8,6 +8,11 @@ class ResPartner(models.Model):
 
     is_entrepreneur = fields.Boolean(string="Is participant")
     fse_id = fields.Integer("ID FSE")
+    nationality = fields.Selection([
+        ('belgian', 'Belgian'),
+        ('eu', 'EU'),
+        ('non-eu', 'Non EU')
+    ])
     professional_status = fields.Selection([
         ('employee', 'Employee'),
         ('independent', 'Independent worker'),

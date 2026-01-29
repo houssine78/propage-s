@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 14:35+0000\n"
-"PO-Revision-Date: 2026-01-29 14:35+0000\n"
+"POT-Creation-Date: 2026-01-29 15:32+0000\n"
+"PO-Revision-Date: 2026-01-29 15:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,11 @@ msgstr "Info administrative"
 #: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__amount_received
 msgid "Amount of the received financing"
 msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__nationality__belgian
+msgid "Belgian"
+msgstr "Belge"
 
 #. module: propage_entrepreneur_case
 #: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__inactive_period__12-24
@@ -204,6 +209,11 @@ msgstr "Démmarage retardé"
 #: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__display_name
 msgid "Display Name"
 msgstr "Nom"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__nationality__eu
+msgid "EU"
+msgstr "UE"
 
 #. module: propage_entrepreneur_case
 #: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__education_level
@@ -518,9 +528,20 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__nationality
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__nationality
+msgid "Nationality"
+msgstr ""
+
+#. module: propage_entrepreneur_case
 #: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__state__no-news
 msgid "No news"
 msgstr "Sans nouvelle"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__nationality__non-eu
+msgid "Non EU"
+msgstr "Non UE"
 
 #. module: propage_entrepreneur_case
 #: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__acquired__not_applicable
