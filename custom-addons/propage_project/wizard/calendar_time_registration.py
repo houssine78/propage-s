@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -6,7 +6,7 @@ class TimeRegistrationWizard(models.TransientModel):
     _name = 'calendar.time.registration.wizard'
     _description = 'Create Timesheet Entries for attendees'
 
-    event_id = fields.Many2one(
+    calendar_event_id = fields.Many2one(
         'calendar.event',
         required=True
     )
@@ -31,8 +31,7 @@ class TimeRegistrationWizard(models.TransientModel):
             raise UserError(_('This can only be used on calendar event'))
         
         event = self.env['calendar.event'].browse(self.env.context['active_id'])
-        default['event_id'] = event.id
-        default['event_id'] = event.duration
+        default['calendar_event_id'] = event.id
 
         line_vals = []
         for partner in event.partner_ids:
@@ -49,7 +48,7 @@ class TimeRegistrationWizard(models.TransientModel):
     def register_time(self):
         anal_line = self.env['account.analytic.line'].sudo()
         train_part = self.env['training.participant'].sudo()
-        
+        # event_id = self.env.context['active_id']
         for line in self.registration_lines:
             anal_line_vals = {}
             train_part_vals = {}
@@ -64,6 +63,7 @@ class TimeRegistrationWizard(models.TransientModel):
                 anal_line_vals['task_id'] = line.time_registration_id.task_id.id
                 anal_line_vals['unit_amount'] = line.duration
                 anal_line_vals['customer_id'] = line.customer_id.id
+                anal_line_vals['calendar_event_id'] = self.calendar_event_id.id
 
                 anal_line.create(anal_line_vals)
             else:
@@ -71,8 +71,8 @@ class TimeRegistrationWizard(models.TransientModel):
                 train_part_vals['task_id'] = line.time_registration_id.task_id.id
                 train_part_vals['training_date'] = line.date
                 train_part_vals['state'] = 'attended'
+                train_part_vals['calendar_event_id'] = self.calendar_event_id.id
                 train_part.create(train_part_vals)
-        self.event_id.time_registered = True
 
 
 class TimeRegistrationLineWizard(models.TransientModel):

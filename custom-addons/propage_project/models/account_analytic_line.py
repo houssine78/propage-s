@@ -12,4 +12,5 @@ class AccountAnalyticLine(models.Model):
         string="Type",
     )
     is_fse = fields.Boolean(related="task_id.is_fse")
-    customer_id = fields.Many2one('res.partner')
+    customer_id = fields.Many2one("res.partner")
+    calendar_event_id = fields.Many2one("calendar.event")

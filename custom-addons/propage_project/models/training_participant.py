@@ -6,8 +6,8 @@ class TrainingParticpant(models.Model):
 
     participant_id = fields.Many2one(
         "res.partner",
-        required = True,
-        domain = [('is_entrepreneur', '=', True)]
+        required=True,
+        domain=[('is_entrepreneur', '=', True)]
     )
     state = fields.Selection([
         ('draft', 'draft'),
@@ -20,7 +20,7 @@ class TrainingParticpant(models.Model):
     task_id = fields.Many2one(
         "project.task",
         string="Task",
-        required = True
+        required=True
     )
     timesheet_ids = fields.One2many(
         related='task_id.timesheet_ids',
@@ -31,6 +31,7 @@ class TrainingParticpant(models.Model):
         string="Sent by his company",
         help="The participant has been sent by his company"
     )
+    calendar_event_id = fields.Many2one("calendar.event")
 
     def action_attended(self):
         self.write({'state': 'attended'})

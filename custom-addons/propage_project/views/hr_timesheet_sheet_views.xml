@@ -9,7 +9,6 @@
                 <field name="is_fse" invisible="1" />
                 <field name="timesheet_type" attrs="{'readonly': [('is_fse', '=', False)]}"/>
                 <field name="customer_id" readonly="is_fse == True"/>
-                <!--<field name="company_id" invisible="1" />-->
             </xpath>
 		</field>
 	</record>
