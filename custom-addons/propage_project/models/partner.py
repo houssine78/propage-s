@@ -11,6 +11,16 @@ class Partner(models.Model):
         'training.participant',
         'participant_id'
     )
+    is_employee = fields.Boolean(
+        compute="_compute_is_employee",
+        store=True
+    )
+
+    @api.depends("employee_ids")
+    def _compute_is_employee(self):
+        for partner in self:
+            if partner.employees_count > 0:
+                partner.is_employee = True
 
     @api.model_create_multi
     def create(self, vals_list):
