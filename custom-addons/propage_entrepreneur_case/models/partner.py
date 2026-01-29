@@ -6,8 +6,8 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    is_entrepreneur = fields.Boolean(string="Is intern")
-    fse_id = fields.Integer()
+    is_entrepreneur = fields.Boolean(string="Is participant")
+    fse_id = fields.Integer("ID FSE")
     professional_status = fields.Selection([
         ('employee', 'Employee'),
         ('independent', 'Independent worker'),
@@ -20,9 +20,9 @@ class ResPartner(models.Model):
         string="Professional status"
     )
     inactive_period = fields.Selection([
-        ('employee', 'Employee'),
-        ('independent', 'Independent worker'),
-        ('unemployed', 'Unemployed')
+        ('-12', 'Less than 12 months'),
+        ('12-24', 'Between 12 and 24 months'),
+        ('24', 'More than 24 months')
         ],
         string="Inactive period"
     )
