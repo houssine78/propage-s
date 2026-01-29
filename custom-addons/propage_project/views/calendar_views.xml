@@ -8,6 +8,10 @@
                 <button icon="fa-bars" string="Register time" title="Register time"
                         type="action" name="%(action_view_calendar_time_registration_wizard)d" />
             </div>
+            
+            <field name="start_date" position="before">
+                <field name="meeting_type_id" widget="selection"/>
+            </field>
             <page name="page_invitations" position="before">
 	            <page name="timesheets">
 	                <field name="timesheet_ids" readonly="True">

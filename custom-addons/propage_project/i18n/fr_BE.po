@@ -4,28 +4,47 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-05 14:34+0000\n"
-"PO-Revision-Date: 2024-04-05 16:36+0200\n"
+"POT-Creation-Date: 2026-01-29 16:06+0000\n"
+"PO-Revision-Date: 2026-01-29 16:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_accounting
+#: model:project.tags,name:propage_project.tag_accounting
 msgid "Accounting"
-msgstr "Comptabilité"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_accounting_obligations
 msgid "Accounting and tax obligations"
 msgstr "Obligations comptables et fiscales d’une entreprise"
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Ligne analytique"
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__training_participant__state__attended
+#: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
+msgid "Attended"
+msgstr "Participant"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_time_registration_wizard
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_time_registration_wizard
+msgid "Attendees details"
+msgstr "Participants détails"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_accounting_basic_concepts
@@ -56,6 +75,19 @@ msgid "Business transfer training"
 msgstr "Formation sur la transmission d’une entreprise"
 
 #. module: propage_project
+#: model:ir.model,name:propage_project.model_calendar_event
+#: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__calendar_event_id
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__calendar_event_id
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__calendar_event_id
+msgid "Calendar Event"
+msgstr "Événement calendrier"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__code
+msgid "Code"
+msgstr "Code"
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_company_reorganization
 msgid "Company reorganization - reflection and decision support"
 msgstr ""
@@ -67,9 +99,79 @@ msgid "Conflict of interest procedure training"
 msgstr "Formation sur la procédure de conflits d’intérêts"
 
 #. module: propage_project
+#: model:ir.model,name:propage_project.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_calendar_time_registration_wizard
+msgid "Create Timesheet Entries for attendees"
+msgstr "Créer une ligne de timesheet pour les partipants"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__create_uid
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__create_uid
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__create_uid
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__create_uid
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__create_date
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__create_date
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__create_date
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__create_date
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__customer_id
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__customer_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__date
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__training_date
+msgid "Date"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__training_participant__state__declined
+#: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
+msgid "Declined"
+msgstr "Décliné"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__name
+msgid "Description"
+msgstr ""
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_diagnosis
 msgid "Diagnosis of start-up conditions and preliminary meetings"
 msgstr "Diagnostic des conditions de démarrage et rencontres préalables"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_time_registration_wizard
+msgid "Discard"
+msgstr "Refuser"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__display_name
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__display_name
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__display_name
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__display_name
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__duration
+msgid "Duration"
+msgstr "Durée"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_value_estimation
@@ -87,19 +189,37 @@ msgid "Evaluation of cost price"
 msgstr "Evaluation du prix de revient"
 
 #. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "FSE Time Logs"
+msgstr "Liste du temps FSE"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__is_fse
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__is_fse
+#: model:ir.model.fields,field_description:propage_project.field_project_task__is_fse
+msgid "FSE task"
+msgstr "Tache FSE"
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_training_financial_forecast
 msgid "Financial forecasts"
 msgstr "Prévisions financières"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_financial_management
+#: model:project.tags,name:propage_project.tag_financial_management
 msgid "Financial management"
-msgstr "Gestion financière"
+msgstr "Management financier"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_financial_strategy
 msgid "Financing strategy"
 msgstr "Stratégie de financement"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__fse_time_log_ids
+#: model:ir.model.fields,field_description:propage_project.field_res_users__fse_time_log_ids
+msgid "Fse Time Log"
+msgstr "Liste du temps FSE"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_cooperative_society
@@ -111,14 +231,23 @@ msgstr ""
 "sein des organes de l’entreprise"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_gouv_org_coll
+#: model:project.tags,name:propage_project.tag_gouv_org_coll
 msgid "Governance and collective organization"
-msgstr "Gouvernance et organisation collective"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_group_organization
 msgid "Group organization and decision-making"
 msgstr "Organisation du collectif et prises de décision"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__id
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__id
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__id
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__id
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__id
+msgid "ID"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_management_tools
@@ -136,14 +265,62 @@ msgid "Introduction to simplified accounting (micro-Association)"
 msgstr "Initiation comptabilité simplifiée (micro-ASBL)"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_Legal
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__is_employee
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__is_employee
+#: model:ir.model.fields,field_description:propage_project.field_res_users__is_employee
+msgid "Is Employee"
+msgstr "Est un employé"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__is_template
+msgid "Is Template"
+msgstr "Est un modèle"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__write_uid
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__write_uid
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__write_uid
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__write_uid
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__write_date
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__write_date
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__write_date
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__write_date
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_legal
 msgid "Legal"
-msgstr "Juridique"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_legal
 msgid "Legal training"
 msgstr "Formation aux aspects juridiques"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_event__meeting_type_id
+#: model_terms:ir.ui.view,arch_db:propage_project.meeting_type_search_view
+msgid "Meeting Type"
+msgstr "Type de meeting"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.meeting_type_form_view
+#: model_terms:ir.ui.view,arch_db:propage_project.meeting_type_tree_view
+msgid "Meeting Types"
+msgstr "Types de meeting"
+
+#. module: propage_project
+#: model:ir.actions.act_window,name:propage_project.action_meeting_type
+#: model:ir.ui.menu,name:propage_project.menu_calendar_meeting_type
+msgid "Meeting types"
+msgstr "Types de meeting"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_financial_health
@@ -155,19 +332,81 @@ msgstr ""
 "viabilité"
 
 #. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__training_participant__state__missed
+#: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
+msgid "Missed"
+msgstr "Manqué"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_meeting_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__account_analytic_line__timesheet_type__p1
+#: model:ir.model.fields.selection,name:propage_project.selection__calendar_time_registration_line_wizard__timesheet_type__p1
+msgid "P1"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__account_analytic_line__timesheet_type__p2
+#: model:ir.model.fields.selection,name:propage_project.selection__calendar_time_registration_line_wizard__timesheet_type__p2
+msgid "P2"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__account_analytic_line__timesheet_type__p3
+#: model:ir.model.fields.selection,name:propage_project.selection__calendar_time_registration_line_wizard__timesheet_type__p3
+msgid "P3"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_event__participant_ids
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__participant_id
+msgid "Participant"
+msgstr "Participant"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__participant_count
+msgid "Participant Count"
+msgstr "Nombre de participant"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__participants
+#: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
+msgid "Participants"
+msgstr "Participants"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__partner_id
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__partner_id
+msgid "Partner"
+msgstr ""
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_training_cashflow_plan
 msgid "Preparing a cash flow plan"
 msgstr "Préparation du plan de trésorerie"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_management
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__project_id
+msgid "Project"
+msgstr "Projet"
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_project_management
 msgid "Project management"
-msgstr "Gestion de projets"
+msgstr "Gestion de projet"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_tools
 msgid "Project structuring and management tools"
 msgstr "Outils de structuration et gestion de projet"
+
+#. module: propage_project
+#: model:project.project,name:propage_project.project_management
+msgid "Project template"
+msgstr "Gestion de projets"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_business_model
@@ -178,6 +417,26 @@ msgstr "Réflexion sur le modèle économique"
 #: model:project.task,name:propage_project.task_training_financial_plan
 msgid "Reflection and elaboration of the financial plan"
 msgstr "Réflexion et élaboration du plan financier"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_time_registration_wizard
+msgid "Register"
+msgstr ""
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_event_form
+msgid "Register time"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__registration_lines
+msgid "Registration Lines"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__sent_by_company
+msgid "Sent by his company"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_analytic_accounting
@@ -200,6 +459,11 @@ msgid "Solution implementation"
 msgstr "Mise en place de la solution"
 
 #. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__state
+msgid "State"
+msgstr "Etat"
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_strategic_orientation
 msgid ""
 "Strategic orientation, training in identifying objectives and translating "
@@ -209,9 +473,14 @@ msgstr ""
 "déclinaison en action"
 
 #. module: propage_project
-#: model:project.project,name:propage_project.project_stategic_thinking
+#: model:project.tags,name:propage_project.tag_stategic_thinking
 msgid "Strategic thinking"
-msgstr "Réflexion stratégique"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__sub_name
+msgid "Sub Name"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_support_implementing
@@ -220,23 +489,65 @@ msgstr "Accompagnement vers la mise en place des solutions identifiées"
 
 #. module: propage_project
 #: model:ir.model,name:propage_project.model_project_task
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__task_id
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__task_id
 msgid "Task"
 msgstr "Tâche"
 
 #. module: propage_project
-#: model:project.project,label_tasks:propage_project.project_Legal
-#: model:project.project,label_tasks:propage_project.project_accounting
-#: model:project.project,label_tasks:propage_project.project_financial_management
-#: model:project.project,label_tasks:propage_project.project_gouv_org_coll
 #: model:project.project,label_tasks:propage_project.project_management
-#: model:project.project,label_tasks:propage_project.project_stategic_thinking
 msgid "Tasks"
 msgstr "Tâches"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_main_contracts
-msgid "The main contracts"
+msgid ""
+"The main contracts: The main contracts between a company and its partners "
+"(customers, suppliers, service providers, workers, lenders, etc.)"
 msgstr "Les principaux contrats"
+
+#. module: propage_project
+#: model:ir.model.fields,help:propage_project.field_training_participant__sent_by_company
+msgid "The participant has been sent by his company"
+msgstr ""
+
+#. module: propage_project
+#. odoo-python
+#: code:addons/propage_project/wizard/calendar_time_registration.py:0
+#, python-format
+msgid "This can only be used on calendar event"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__time_fse_p1
+msgid "Time Fse P1"
+msgstr "Temps FSE P1"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__time_fse_p2
+msgid "Time Fse P2"
+msgstr "Temps FSE P2"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__time_registration_id
+msgid "Time Registration"
+msgstr "Enregistrement du temp"
+
+#. module: propage_project
+#: model:ir.actions.act_window,name:propage_project.action_view_calendar_time_registration_wizard
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_time_registration_wizard
+msgid "Time registration"
+msgstr "Enregistrement du temp"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_event__timesheet_ids
+msgid "Timesheet"
+msgstr "Feuille de temps"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_training_participant__timesheet_ids
+msgid "Timesheets"
+msgstr "Feuilles de temps"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_project_task__name
@@ -267,8 +578,8 @@ msgid ""
 "Training on the choice of legal structure: characteristics of ASBLs and "
 "cooperative societies"
 msgstr ""
-"Formation sur le choix de la structure juridique : caractéristiques des "
-"ASBL et des sociétés coopératives"
+"Formation sur le choix de la structure juridique : caractéristiques des ASBL"
+" et des sociétés coopératives"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_formalities
@@ -287,6 +598,11 @@ msgstr ""
 "juridique"
 
 #. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
+msgid "Training participants"
+msgstr ""
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_training
 msgid "Training/coaching in project structuring and management"
 msgstr "Formation/accompagnement à la structuration et la gestion de projet"
@@ -302,11 +618,65 @@ msgid "Training/coaching in the preparation of financial projections"
 msgstr "Formation/accompagnement à l’établissement de projections financières"
 
 #. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__trainings
+#: model:ir.model.fields,field_description:propage_project.field_res_users__trainings
+msgid "Trainings"
+msgstr "Formation"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__timesheet_type
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__timesheet_type
+msgid "Type"
+msgstr "Type"
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_values_vision_missions
 msgid "Values, Vision, Missions"
 msgstr "Valeurs, Vision, Missions"
 
 #. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_project_task__is_wr
+msgid "Walloon Region task"
+msgstr ""
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_work_organization
 msgid "Work organization "
 msgstr "Organisation du travail"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_fse_time_log__year
+msgid "Year"
+msgstr ""
+
+#. module: propage_project
+#. odoo-python
+#: code:addons/propage_project/wizard/calendar_time_registration.py:0
+#, python-format
+msgid "You need to give a timesheet_type for the employee"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_calendar_time_registration_line_wizard
+msgid "calendar.time.registration.line.wizard"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields.selection,name:propage_project.selection__training_participant__state__draft
+msgid "draft"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_fse_time_log
+msgid "fse.time.log"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_meeting_type
+msgid "meeting.type"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_training_participant
+msgid "training.participant"
+msgstr ""

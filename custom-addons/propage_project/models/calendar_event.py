@@ -12,3 +12,7 @@ class Meeting(models.Model):
         "training.participant",
         "calendar_event_id"
     )
+    meeting_type_id = fields.Many2one(
+        "meeting.type",
+        required=True
+    )
