@@ -1,0 +1,690 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* propage_entrepreneur_case
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-29 14:35+0000\n"
+"PO-Revision-Date: 2026-01-29 14:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__acquired
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__acquired
+msgid "Achievements at end of action"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__new_skills
+msgid ""
+"Acquire new skills/capacities/abilities to better support/help target "
+"audiences"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__action_end_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__action_end_date
+msgid "Action end date"
+msgstr "Date de fin d'action"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__action_start_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__action_start_date
+msgid "Action start date"
+msgstr "Date de début d'action"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Administrative info"
+msgstr "Info administrative"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__amount_received
+msgid "Amount of the received financing"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__inactive_period__12-24
+msgid "Between 12 and 24 months"
+msgstr "Entre 12 et 24 mois"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__cpas
+msgid "CPAS (incl. art.60&61)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_crm_lead__case_created
+msgid "Case Created"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__closing_type__unclosed
+msgid "Case not closed"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__acquired__achivement_cert
+msgid "Certificate of achievement"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__acquired__participation_cert
+msgid "Certificate of participation"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__closing_type
+msgid "Closing Type"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__interventio_type__coaching
+msgid "Coaching / Creation-transformation"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__comments
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__comments
+msgid "Comments"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__comments_afse
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__comments_afse
+msgid "Comments AFSE"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__convention_2c
+msgid "Convention 2C"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__covention_file_name
+msgid "Covention File Name"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__is_fse
+msgid "Covered by FSE"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__is_decree_consultancy_agency
+msgid "Covered by Wallonia Decree"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.crm_lead_view_form
+msgid "Create Case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.crm_lead_view_form
+msgid "Create Entrepreneur Case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.propage_create_tasks_view_form
+msgid "Create task"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.actions.act_window,name:propage_entrepreneur_case.propage_create_tasks_wizard_action
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Create tasks"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__created_jobs
+msgid "Created Jobs"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__create_uid
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__create_uid
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__crm_lead_id
+msgid "Created from lead"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__create_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__create_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__closing_type__creation
+msgid "Creation"
+msgstr "Création"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__cumulive_total_hours
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__cumulive_total_hours
+msgid "Cumulative total hours"
+msgstr "Total des heures cumulés"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__state__delayed
+msgid "Delayed start"
+msgstr "Démmarage retardé"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__display_name
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__display_name
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__education_level
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__education_level
+msgid "Education level"
+msgstr "Niveau d'éducation"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__partner_email
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__team_leader_email
+msgid "Email"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__employee
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__closing_type__ongoing
+msgid "End of convention or intervention"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__intervention_end_date
+msgid "End of intervention (effective or scheduled)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__end_type
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__end_type
+msgid "End type (priority 1,2,3,4)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__end_type_2
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__end_type_2
+msgid "End type (priority 5)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__unknow
+msgid "End unknow"
+msgstr "Fin non connue"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.crm_lead_view_form
+msgid "Entrepeneur Cases"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Entrepreneur Case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.ui.menu,name:propage_entrepreneur_case.entrepreneur_case_main_menu
+#: model:ir.ui.menu,name:propage_entrepreneur_case.entrepreneur_case_menu
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_team_form_view
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.view_entrepreneur_case_search
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.view_entrepreneur_case_tree
+msgid "Entrepreneur Cases"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.ui.menu,name:propage_entrepreneur_case.entrepreneur_team_menu
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_team_form_view
+msgid "Entrepreneur Team"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_team_search_view
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_team_tree_view
+msgid "Entrepreneur Teams"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.actions.act_window,name:propage_entrepreneur_case.action_entrepreneur_case
+msgid "Entrepreneur case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.actions.act_window,name:propage_entrepreneur_case.action_entrepreneur_team
+msgid "Entrepreneur team"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.actions.act_window,name:propage_entrepreneur_case.action_partner_entrepreneur
+#: model:ir.ui.menu,name:propage_entrepreneur_case.entrepreneur_menu
+msgid "Entrepreneurs"
+msgstr "Partipants"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__interventio_type__expertise
+msgid "Expertise or consultancy"
+msgstr "Expertise ou consultance"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.view_partner_form_propage
+msgid "FSE Information"
+msgstr "Information FSE"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__feasibility_study
+msgid "Feasibility Study"
+msgstr "Etude de faisabilité"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Files"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__financial_analysis
+msgid "Financial Analysis"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__financing_file_support
+msgid "Financing File Support"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__financing_received
+msgid "Financing Received"
+msgstr "Financnement reçu"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__rh
+msgid "HR"
+msgstr "RH"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__education_level__higher_education
+msgid "Higher education (CITE 5 to 8)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__hours_invoiced
+msgid "Hours invoiced (past year)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__total_hours_invoiced
+msgid "Hours invoiced (since the start)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__hours_performed
+msgid "Hours performed (past year)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__total_hours_performed
+msgid "Hours performed (since the start)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__id
+msgid "ID"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__fse_id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__fse_id
+msgid "ID FSE"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__education
+msgid "In education or in training"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__inactive_alt_education
+msgid "Inactive alternative education"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__inactive_education
+msgid "Inactive education"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__inactive_other
+msgid "Inactive other"
+msgstr "Autre inactivité"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__inactive_period
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__inactive_period
+msgid "Inactive period"
+msgstr "Période d'inactivité"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__independent
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__independent
+msgid "Independent worker"
+msgstr "Travailleur indépendant"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_crm_lead__case_ids
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__entrepreneur_case_ids
+msgid "Intern Case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__entrepreneur_case_id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_project_task__entrepreneur_case_id
+msgid "Intern case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__entrepreneur_team_id
+msgid "Intern team"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Intervention info"
+msgstr "Infor de l'intervention"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Intervention summary"
+msgstr "Résumé de l'intervention"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__interventio_type
+msgid "Intervention type"
+msgstr "Type d'intervention"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__is_entrepreneur
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__is_entrepreneur
+msgid "Is participant"
+msgstr "Est un participant"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__job_seeker
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__professional_status__job_seeker
+msgid "Job seeker"
+msgstr "Chercheur d'emploi"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__write_uid
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__write_uid
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__write_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__write_date
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/opportunité"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__legal_analysis
+msgid "Legal Analysis"
+msgstr "Analyse Juridique"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__inactive_period__-12
+msgid "Less than 12 months"
+msgstr "Moins 12 mois"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__education_level__first_cycle_second
+msgid "Max. first cycle of secondary (CITE 0 to 2)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__education_level__post_second_school
+msgid "Max. post secondary school (CITE 3 to 4)"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__merchant_social_economy
+msgid "Merchant Social Economy"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__partner_mobile
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__team_leader_mobile
+msgid "Mobile"
+msgstr "GSM"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__mobility_support
+msgid "Mobility support"
+msgstr "Aide mobilité"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__inactive_period__24
+msgid "More than 24 months"
+msgstr "Plus de 24 mois"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__name
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__state__no-news
+msgid "No news"
+msgstr "Sans nouvelle"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__acquired__not_applicable
+msgid "Not applicable"
+msgstr "Non applicable"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__acquired__recognized_qualification
+msgid "Obtaining a recognized qualification"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__others
+msgid "Others"
+msgstr "Autres"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__interventio_type__post-creation
+msgid "Post-creation follow-up"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__professional_status
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__professional_status
+msgid "Professional status"
+msgstr "Statut professionel"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__project_id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__project_id
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Project"
+msgstr "Projet"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__team_member_ids
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__team_member_ids
+msgid "Project members"
+msgstr "Membres du projet"
+
+#. module: propage_entrepreneur_case
+#: model:ir.ui.menu,name:propage_entrepreneur_case.project_main_menu
+#: model:ir.ui.menu,name:propage_entrepreneur_case.project_project_menu
+msgid "Projects"
+msgstr "Projets"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__ineligibility_reason
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__ineligibility_reason
+msgid "Reason for ineligibility"
+msgstr "Raison de l'inéligibilité"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__responsible
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__self_help_support
+msgid "Self-help/self-care support"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_crm_lead__show_create_case
+msgid "Show Create Case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__sowescom_collaboration
+msgid "Sowescom Collaboration"
+msgstr "Collaboration Sowescom"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__state
+msgid "State"
+msgstr "Etat"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__housing_support
+msgid "Support and/or access to adapted and/or inclusive housing"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__social_support
+msgid "Support for social inclusion / access to leisure activities"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__task_ids
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.propage_create_tasks_view_form
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__team_leader_id
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_team__team_leader_id
+msgid "Team Leader"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_team_form_view
+msgid "Team members"
+msgstr "Membres de l'équipe"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.entrepreneur_case
+msgid "Type of intervention"
+msgstr "Type d'intervention"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__unknow
+msgid "Unknow"
+msgstr "Inconnu"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__closing_type__withdrawal
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type_2__withdrawal
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__res_partner__end_type__withdrawal
+msgid "Withdrawal"
+msgstr "Retrait"
+
+#. module: propage_entrepreneur_case
+#: model_terms:ir.ui.view,arch_db:propage_entrepreneur_case.propage_create_tasks_view_form
+msgid "_form"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_create_task_wizard
+msgid "create.task.wizard"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_entrepreneur_case
+msgid "entrepreneur.case"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model,name:propage_entrepreneur_case.model_entrepreneur_team
+msgid "entrepreneur.team"
+msgstr ""
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields.selection,name:propage_entrepreneur_case.selection__entrepreneur_case__state__ongoing
+msgid "ongoing"
+msgstr "encours"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_partner__ineligble_afse
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_res_users__ineligble_afse
+msgid "participant made ineligible by AFSE"
+msgstr "Participant rendu inéligblie au AFSE"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_entrepreneur_case__intervention_start_date
+msgid "start of intervention"
+msgstr "Début d'intervention"
+
+#. module: propage_entrepreneur_case
+#: model:ir.model.fields,field_description:propage_entrepreneur_case.field_create_task_wizard__task_ids
+msgid "tasks to create"
+msgstr ""
