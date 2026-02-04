@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class Meeting(models.Model):
     _inherit = 'calendar.event'
 
+    name = fields.Char(required=False)
     timesheet_ids = fields.One2many(
         "account.analytic.line",
         "calendar_event_id"
