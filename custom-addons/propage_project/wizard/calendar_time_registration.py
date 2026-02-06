@@ -21,7 +21,8 @@ class TimeRegistrationWizard(models.TransientModel):
         'calendar.time.registration.line.wizard',
         'time_registration_id'
     )
-
+    lock = fields.Boolean()
+            
     @api.model
     def default_get(self, fields):
         default = super().default_get(fields)
@@ -32,6 +33,10 @@ class TimeRegistrationWizard(models.TransientModel):
         
         event = self.env['calendar.event'].browse(self.env.context['active_id'])
         default['calendar_event_id'] = event.id
+        if event.timesheet_ids:
+            default['project_id'] = event.timesheet_ids[0].project_id.id
+            default['task_id'] = event.timesheet_ids[0].task_id.id
+            default['lock'] = True
 
         line_vals = []
         for partner in event.partner_ids:
@@ -45,14 +50,30 @@ class TimeRegistrationWizard(models.TransientModel):
         default['registration_lines'] = [(6, 0, lines.ids)]
         return default
 
+    def check_time(self, line):
+        AnalLine = self.env['account.analytic.line'].sudo()
+
+        if line.duration > self.calendar_event_id.duration:
+            raise UserError(_("You can't register more time than the meeting duration"))
+
+        existing_lines = AnalLine.search([
+            ("calendar_event_id", "=", self.calendar_event_id.id),
+            ("employee_id", "=", line.partner_id.employee_ids[0].id)
+        ])
+        registered_time = sum(existing_lines.mapped("unit_amount"))
+        if registered_time >= self.calendar_event_id.duration:
+            raise UserError(_("You can't register more time than the meeting duration"))
+
     def register_time(self):
-        anal_line = self.env['account.analytic.line'].sudo()
-        train_part = self.env['training.participant'].sudo()
+        AnalLine = self.env['account.analytic.line'].sudo()
+        TrainPart = self.env['training.participant'].sudo()
         # event_id = self.env.context['active_id']
         for line in self.registration_lines:
             anal_line_vals = {}
             train_part_vals = {}
+            
             if line.is_employee:
+                self.check_time(line)
                 if line.is_fse:
                     if not line.timesheet_type:
                         raise UserError(_('You need to give a timesheet_type for the employee'))
@@ -65,14 +86,14 @@ class TimeRegistrationWizard(models.TransientModel):
                 anal_line_vals['customer_id'] = line.customer_id.id
                 anal_line_vals['calendar_event_id'] = self.calendar_event_id.id
 
-                anal_line.create(anal_line_vals)
+                AnalLine.create(anal_line_vals)
             else:
                 train_part_vals['participant_id'] = line.partner_id.id
                 train_part_vals['task_id'] = line.time_registration_id.task_id.id
                 train_part_vals['training_date'] = line.date
                 train_part_vals['state'] = 'attended'
                 train_part_vals['calendar_event_id'] = self.calendar_event_id.id
-                train_part.create(train_part_vals)
+                TrainPart.create(train_part_vals)
 
 
 class TimeRegistrationLineWizard(models.TransientModel):

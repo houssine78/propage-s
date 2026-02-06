@@ -7,8 +7,9 @@
             <field name="arch" type="xml">
                 <form string="Time registration">
                     <group>
-                        <field name="project_id"/>
-                        <field name="task_id" domain="[('project_id', '=', project_id)]"/>
+                        <field name="project_id" readonly="lock"/>
+                        <field name="task_id" domain="[('project_id', '=', project_id)]" readonly="lock"/>
+                        <field name="lock" invisble="True"/>
                     </group>
                     <notebook>
                         <page name="attendees" string="Attendees">
