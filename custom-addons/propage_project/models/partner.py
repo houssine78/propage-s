@@ -15,12 +15,26 @@ class Partner(models.Model):
         compute="_compute_is_employee",
         store=True
     )
+    time_fse_p1 = fields.Float(compute="_compute_time_participant")
+    time_fse_p2 = fields.Float(compute="_compute_time_participant")
 
     @api.depends("employee_ids")
     def _compute_is_employee(self):
         for partner in self:
             if partner.employees_count > 0:
                 partner.is_employee = True
+
+    def _compute_time_participant(self):
+        for partner in self:
+            time_fse_p1 = 0
+            time_fse_p2 = 0
+    
+            for time_log in self.fse_time_log_ids:
+                time_fse_p1 += time_log.time_fse_p1
+                time_fse_p2 += time_log.time_fse_p2
+    
+            partner.time_fse_p1 = time_fse_p1
+            partner.time_fse_p2 = time_fse_p2
 
     @api.model_create_multi
     def create(self, vals_list):
