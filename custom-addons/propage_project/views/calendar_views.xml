@@ -17,6 +17,8 @@
 	                <field name="timesheet_ids" readonly="True">
 	                   <tree editable="top" create="false" delete="false">
 	 	                    <field name="date"/> 
+	 	                    <field name="project_id"/>
+	 	                    <field name="task_id"/>
 		                    <field name="is_fse" />
 	                        <field name="timesheet_type" />
 	                        <field name="customer_id" />
