@@ -13,7 +13,8 @@
         "project",
         "calendar",
         "hr_timesheet",
-        "hr_timesheet_sheet"
+        "hr_timesheet_sheet",
+        "web_widget_x2many_2d_matrix"
     ],
     "data": [
         "security/ir.model.access.csv",

@@ -3,5 +3,6 @@ from . import calendar_event
 from . import fse_time_log
 from . import meeting_type
 from . import partner
+from . import partner_timesheet_matrix
 from . import task
 from . import training_participant

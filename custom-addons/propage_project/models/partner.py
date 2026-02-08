@@ -17,6 +17,45 @@ class Partner(models.Model):
     )
     time_fse_p1 = fields.Float(compute="_compute_time_participant")
     time_fse_p2 = fields.Float(compute="_compute_time_participant")
+    timesheet_matrix_ids = fields.One2many(
+        'partner.timesheet.matrix',
+        'partner_id',
+        compute='_compute_timesheet_matrix',
+        string="Matrice des temps",
+        store=True
+    )
+    timesheet_ids = fields.One2many(
+        'account.analytic.line',
+        'customer_id'
+    )
+
+    @api.depends('timesheet_ids', 'timesheet_ids.customer_id', 'timesheet_ids.task_id.is_wr')    
+    def _compute_timesheet_matrix(self):
+        for partner in self:
+            matrix_data = {}
+
+            for line in self.timesheet_ids.filtered(
+                    lambda t: t.task_id and t.task_id.is_wr and t.customer_id.id == partner.id
+                ):
+                year = str(line.date.year)
+                task_id = line.task_id.id
+                key = (year, task_id)
+                
+                if key not in matrix_data:
+                    matrix_data[key] = 0.0
+                matrix_data[key] += line.unit_amount
+            
+            matrix_data = dict(sorted(matrix_data.items()))
+            
+            commands = [(5, 0, 0)]
+            for (year, task_id), amount in matrix_data.items():
+                commands.append((0, 0, {
+                    'year': year,
+                    'task_id': task_id,
+                    'amount': amount,
+                }))
+            # partner.timesheet_matrix_ids.unlink()
+            partner.timesheet_matrix_ids = commands
 
     @api.depends("employee_ids")
     def _compute_is_employee(self):
