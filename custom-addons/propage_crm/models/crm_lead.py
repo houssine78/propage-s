@@ -9,3 +9,6 @@ class Lead(models.Model):
     is_won = fields.Boolean(related='stage_id.is_won')
     convention_2c = fields.Binary(string="Convention 2C")
     covention_file_name = fields.Char()
+    timesheet_matrix_ids = fields.One2many(
+        related="partner_id.timesheet_matrix_ids"
+    )

@@ -11,6 +11,7 @@
     "depends": [
         "crm",
         "propage_base",
+        "propage_project"
     ],
     "data": [
         "security/ir.model.access.csv",
