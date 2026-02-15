@@ -20,7 +20,8 @@ class TrainingParticpant(models.Model):
     task_id = fields.Many2one(
         "project.task",
         string="Task",
-        required=True
+        required=True,
+        ondelete="restrict"
     )
     timesheet_ids = fields.One2many(
         related='task_id.timesheet_ids',
