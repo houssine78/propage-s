@@ -19,12 +19,13 @@
     "data": [
         "security/ir.model.access.csv",
         "data/propage_project_data.xml",
-        "wizard/calendar_time_registration_view.xml",
+        "report/timesheet_analysis_report_views.xml",
         "views/calendar_views.xml",
         "views/task_views.xml",
         "views/hr_timesheet_sheet_views.xml",
         "views/meeting_type_views.xml",
-        "views/partner_views.xml"
+        "views/partner_views.xml",
+        "wizard/calendar_time_registration_view.xml",
     ],
     "installable": True,
 }

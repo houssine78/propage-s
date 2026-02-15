@@ -1,0 +1,15 @@
+<odoo>
+	<record id="view_timesheets_analysis_report_search_propage" model="ir.ui.view">
+	    <field name="name">timesheets.analysis.report.search.propage</field>
+	    <field name="model">timesheets.analysis.report</field>
+	    <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+	    <field name="arch" type="xml">
+	        <xpath expr="//field[@name='task_id']" position="after">
+                <filter string="Customer" name="group_by_customer"/>
+            </xpath>
+	        <xpath expr="//filter[@name='groupby_task']" position="after">
+	            <filter string="Customer" name="group_by_customer" context="{'group_by': 'customer_id'}"/>
+	        </xpath>
+	    </field>
+	</record>
+</odoo>

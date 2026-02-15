@@ -6,19 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-29 16:06+0000\n"
-"PO-Revision-Date: 2026-01-29 16:06+0000\n"
+"POT-Creation-Date: 2026-02-15 12:59+0000\n"
+"PO-Revision-Date: 2026-02-15 12:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: propage_project
-#: model:project.tags,name:propage_project.tag_accounting
-msgid "Accounting"
-msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_accounting_obligations
@@ -83,9 +78,14 @@ msgid "Calendar Event"
 msgstr "Événement calendrier"
 
 #. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__calendar_warning
+msgid "Calendar Warning"
+msgstr ""
+
+#. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__code
 msgid "Code"
-msgstr "Code"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_company_reorganization
@@ -113,6 +113,7 @@ msgstr "Créer une ligne de timesheet pour les partipants"
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__create_uid
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__create_uid
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__create_uid
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__create_uid
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__create_uid
 msgid "Created by"
 msgstr ""
@@ -122,6 +123,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__create_date
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__create_date
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__create_date
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__create_date
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__create_date
 msgid "Created on"
 msgstr ""
@@ -164,6 +166,7 @@ msgstr "Refuser"
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__display_name
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__display_name
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__display_name
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__display_name
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__display_name
 msgid "Display Name"
 msgstr "Nom"
@@ -206,11 +209,6 @@ msgid "Financial forecasts"
 msgstr "Prévisions financières"
 
 #. module: propage_project
-#: model:project.tags,name:propage_project.tag_financial_management
-msgid "Financial management"
-msgstr "Management financier"
-
-#. module: propage_project
 #: model:project.task,name:propage_project.task_training_financial_strategy
 msgid "Financing strategy"
 msgstr "Stratégie de financement"
@@ -231,20 +229,21 @@ msgstr ""
 "sein des organes de l’entreprise"
 
 #. module: propage_project
-#: model:project.tags,name:propage_project.tag_gouv_org_coll
-msgid "Governance and collective organization"
-msgstr ""
-
-#. module: propage_project
 #: model:project.task,name:propage_project.task_group_organization
 msgid "Group organization and decision-making"
 msgstr "Organisation du collectif et prises de décision"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__amount
+msgid "Hours"
+msgstr "Heures"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__id
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__id
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__id
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__id
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__id
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__id
 msgid "ID"
 msgstr ""
@@ -281,6 +280,7 @@ msgstr "Est un modèle"
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__write_uid
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__write_uid
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__write_uid
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__write_uid
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__write_uid
 msgid "Last Updated by"
 msgstr ""
@@ -290,19 +290,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__write_date
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__write_date
 #: model:ir.model.fields,field_description:propage_project.field_meeting_type__write_date
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__write_date
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__write_date
 msgid "Last Updated on"
-msgstr ""
-
-#. module: propage_project
-#: model:project.tags,name:propage_project.tag_legal
-msgid "Legal"
 msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_legal
 msgid "Legal training"
 msgstr "Formation aux aspects juridiques"
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__lock
+msgid "Lock"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__timesheet_matrix_ids
+#: model:ir.model.fields,field_description:propage_project.field_res_users__timesheet_matrix_ids
+msgid "Matrice des temps"
+msgstr ""
+
+#. module: propage_project
+#: model:ir.model.fields,field_description:propage_project.field_calendar_event__name
+msgid "Meeting Subject"
+msgstr "Sujet du rendez-vous"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_calendar_event__meeting_type_id
@@ -364,7 +376,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:propage_project.field_calendar_event__participant_ids
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__participant_id
 msgid "Participant"
-msgstr "Participant"
+msgstr ""
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_project_task__participant_count
@@ -375,11 +387,12 @@ msgstr "Nombre de participant"
 #: model:ir.model.fields,field_description:propage_project.field_project_task__participants
 #: model_terms:ir.ui.view,arch_db:propage_project.view_task_form_propage
 msgid "Participants"
-msgstr "Participants"
+msgstr ""
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__partner_id
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__partner_id
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__partner_id
 msgid "Partner"
 msgstr ""
 
@@ -394,11 +407,6 @@ msgid "Project"
 msgstr "Projet"
 
 #. module: propage_project
-#: model:project.tags,name:propage_project.tag_project_management
-msgid "Project management"
-msgstr "Gestion de projet"
-
-#. module: propage_project
 #: model:project.task,name:propage_project.task_tools
 msgid "Project structuring and management tools"
 msgstr "Outils de structuration et gestion de projet"
@@ -407,6 +415,11 @@ msgstr "Outils de structuration et gestion de projet"
 #: model:project.project,name:propage_project.project_management
 msgid "Project template"
 msgstr "Gestion de projets"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "RW Timesheets"
+msgstr "Feuilles de temps RW"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_business_model
@@ -473,11 +486,6 @@ msgstr ""
 "déclinaison en action"
 
 #. module: propage_project
-#: model:project.tags,name:propage_project.tag_stategic_thinking
-msgid "Strategic thinking"
-msgstr ""
-
-#. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_project_task__sub_name
 msgid "Sub Name"
 msgstr ""
@@ -490,6 +498,7 @@ msgstr "Accompagnement vers la mise en place des solutions identifiées"
 #. module: propage_project
 #: model:ir.model,name:propage_project.model_project_task
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_wizard__task_id
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__task_id
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__task_id
 msgid "Task"
 msgstr "Tâche"
@@ -498,6 +507,13 @@ msgstr "Tâche"
 #: model:project.project,label_tasks:propage_project.project_management
 msgid "Tasks"
 msgstr "Tâches"
+
+#. module: propage_project
+#: model:ir.model.fields,help:propage_project.field_account_analytic_line__calendar_warning
+msgid ""
+"Technical computed field to warn when not enough time is registered for the "
+"calendar event timesheet"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_main_contracts
@@ -520,11 +536,15 @@ msgstr ""
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__time_fse_p1
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__time_fse_p1
+#: model:ir.model.fields,field_description:propage_project.field_res_users__time_fse_p1
 msgid "Time Fse P1"
 msgstr "Temps FSE P1"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__time_fse_p2
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__time_fse_p2
+#: model:ir.model.fields,field_description:propage_project.field_res_users__time_fse_p2
 msgid "Time Fse P2"
 msgstr "Temps FSE P2"
 
@@ -541,6 +561,8 @@ msgstr "Enregistrement du temp"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_calendar_event__timesheet_ids
+#: model:ir.model.fields,field_description:propage_project.field_res_partner__timesheet_ids
+#: model:ir.model.fields,field_description:propage_project.field_res_users__timesheet_ids
 msgid "Timesheet"
 msgstr "Feuille de temps"
 
@@ -553,6 +575,11 @@ msgstr "Feuilles de temps"
 #: model:ir.model.fields,field_description:propage_project.field_project_task__name
 msgid "Title"
 msgstr "Titre"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "Total"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_company_roles
@@ -627,7 +654,7 @@ msgstr "Formation"
 #: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__timesheet_type
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__timesheet_type
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_values_vision_missions
@@ -646,7 +673,16 @@ msgstr "Organisation du travail"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_fse_time_log__year
+#: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__year
 msgid "Year"
+msgstr ""
+
+#. module: propage_project
+#. odoo-python
+#: code:addons/propage_project/wizard/calendar_time_registration.py:0
+#: code:addons/propage_project/wizard/calendar_time_registration.py:0
+#, python-format
+msgid "You can't register more time than the meeting duration"
 msgstr ""
 
 #. module: propage_project
@@ -675,6 +711,11 @@ msgstr ""
 #: model:ir.model,name:propage_project.model_meeting_type
 msgid "meeting.type"
 msgstr ""
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_partner_timesheet_matrix
+msgid "timesheet matrix"
+msgstr "Matrice de temps"
 
 #. module: propage_project
 #: model:ir.model,name:propage_project.model_training_participant
