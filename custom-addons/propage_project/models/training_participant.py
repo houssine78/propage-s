@@ -32,7 +32,10 @@ class TrainingParticpant(models.Model):
         string="Sent by his company",
         help="The participant has been sent by his company"
     )
-    calendar_event_id = fields.Many2one("calendar.event")
+    calendar_event_id = fields.Many2one(
+        "calendar.event",
+        ondelete="cascade"
+    )
 
     def action_attended(self):
         self.write({'state': 'attended'})
@@ -42,4 +45,3 @@ class TrainingParticpant(models.Model):
 
     def action_declined(self):
         self.write({'state': 'declined'})
-    

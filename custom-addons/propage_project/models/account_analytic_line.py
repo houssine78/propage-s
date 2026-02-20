@@ -13,7 +13,10 @@ class AccountAnalyticLine(models.Model):
     )
     is_fse = fields.Boolean(related="task_id.is_fse")
     customer_id = fields.Many2one("res.partner")
-    calendar_event_id = fields.Many2one("calendar.event")
+    calendar_event_id = fields.Many2one(
+        "calendar.event",
+        ondelete="cascade"
+    )
     calendar_warning = fields.Boolean(
         compute="_compute_calendar_warning",
         help="Technical computed field to warn when not enough time is "
