@@ -1,7 +1,7 @@
 # Copyright 2025 Open Architects Consulting SRL (https://www.openarchitecsconsulting.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from datetime import date
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class FSETimeLog(models.Model):
@@ -9,9 +9,24 @@ class FSETimeLog(models.Model):
 
     partner_id = fields.Many2one('res.partner', required=True)
     year = fields.Char(required=True)
-    time_fse_p1 = fields.Float(compute="_compute_time_participant")
-    time_fse_p2 = fields.Float(compute="_compute_time_participant")
+    time_fse_p1 = fields.Float(
+        compute="_compute_time_participant",
+        store=True
+    )
+    time_fse_p2 = fields.Float(
+        compute="_compute_time_participant",
+        store=True
+    )
 
+    @api.depends(
+        'year',
+        'partner_id.trainings.state',
+        'partner_id.trainings.training_date',
+        'partner_id.trainings.task_id.participant_count',
+        'partner_id.trainings.timesheet_ids',
+        'partner_id.trainings.timesheet_ids.timesheet_type',
+        'partner_id.trainings.timesheet_ids.unit_amount',
+    )
     def _compute_time_participant(self):
         for fse_time_log in self:
             start_date = date(int(fse_time_log.year), 1, 1)

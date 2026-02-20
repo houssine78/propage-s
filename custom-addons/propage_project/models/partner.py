@@ -15,8 +15,14 @@ class Partner(models.Model):
         compute="_compute_is_employee",
         store=True
     )
-    time_fse_p1 = fields.Float(compute="_compute_time_participant")
-    time_fse_p2 = fields.Float(compute="_compute_time_participant")
+    time_fse_p1 = fields.Float(
+        compute="_compute_time_participant",
+        store=True
+    )
+    time_fse_p2 = fields.Float(
+        compute="_compute_time_participant",
+        store=True
+    )
     timesheet_matrix_ids = fields.One2many(
         'partner.timesheet.matrix',
         'partner_id',
@@ -54,7 +60,6 @@ class Partner(models.Model):
                     'task_id': task_id,
                     'amount': amount,
                 }))
-            # partner.timesheet_matrix_ids.unlink()
             partner.timesheet_matrix_ids = commands
 
     @api.depends("employee_ids")
@@ -63,6 +68,11 @@ class Partner(models.Model):
             if partner.employees_count > 0:
                 partner.is_employee = True
 
+    @api.depends(
+        "fse_time_log_ids",
+        "fse_time_log_ids.time_fse_p1",
+        "fse_time_log_ids.time_fse_p2"
+    )
     def _compute_time_participant(self):
         for partner in self:
             time_fse_p1 = 0
@@ -75,32 +85,41 @@ class Partner(models.Model):
             partner.time_fse_p1 = time_fse_p1
             partner.time_fse_p2 = time_fse_p2
 
+    def action_recompute_time_participant(self):
+        self._compute_time_participant()
+
+    def action_create_fse_time_log_years(self):
+        year = fields.Date.today().year
+        if not self.fse_time_log_ids:
+            self.init_time_log()
+        if str(year) not in self.fse_time_log_ids.mapped('year'):
+            vals = {'partner_id': self.id, 'year': str(year)},
+            self.env['fse.time.log'].create(vals)
+        return True
+
+    def init_time_log(self):
+        year = fields.Date.today().year
+        
+        fse_vals_list = [
+            {'partner_id': self.id, 'year': str(year)},
+            {'partner_id': self.id, 'year': str(year - 1)},
+            {'partner_id': self.id, 'year': str(year - 2)},
+        ]
+        self.env['fse.time.log'].create(fse_vals_list)
+
     @api.model_create_multi
     def create(self, vals_list):
         partners = super(Partner, self).create(vals_list)
-        year = fields.Date.today().year
         
         for partner in partners:
             if partner.is_entrepreneur:
-                fse_vals_list = [
-                    {'partner_id': partner.id, 'year': str(year)},
-                    {'partner_id': partner.id, 'year': str(year - 1)},
-                    {'partner_id': partner.id, 'year': str(year - 2)},
-                ]
-                self.env['fse.time.log'].create(fse_vals_list)
+                partner.init_time_log()
         return partners
 
     def write(self, vals):
         res = super(Partner, self).write(vals)
 
-        year = fields.Date.today().year
-
         for partner in self:
             if partner.is_entrepreneur and len(partner.fse_time_log_ids) == 0:
-                fse_vals_list = [
-                    {'partner_id': partner.id, 'year': str(year)},
-                    {'partner_id': partner.id, 'year': str(year - 1)},
-                    {'partner_id': partner.id, 'year': str(year - 2)},
-                ]
-                self.env['fse.time.log'].create(fse_vals_list)
+                partner.init_time_log()
         return res
