@@ -24,25 +24,27 @@
                         </tree>
                     </field>
                 </page>
+                <page string="FSE Training" name="fse_training">
+                    <field name="trainings" readonly="1">
+                        <tree>
+                            <field name="training_date"/>
+                            <field name="task_id"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+            <page name="sales_purchases" position="before">
                 <page string="RW Timesheets" name="timesheet_matrix_tab">
-	                <group name="timesheet" class="hr_timesheet_sheet_summary">
-		                <field string="" name="timesheet_matrix_ids" widget="x2many_2d_matrix" readonly="1" field_x_axis="task_id" field_y_axis="year" field_value="amount">
-		                    <tree>
-		                        <field name="year"/>
-		                        <field name="task_id"/>
-		                        <field name="amount" widget="float_time" sum="Total"/>
-		                    </tree>
-		                </field>
-	                </group>
-	            </page>
-	            <page string="FSE Training" name="fse_training">
-	                <field name="trainings" readonly="1">
-	                    <tree>
-	                        <field name="training_date"/>
-	                        <field name="task_id"/>
-	                        <field name="state"/>
-	                    </tree>
-	                </field>
+                    <group name="timesheet" class="hr_timesheet_sheet_summary">
+                        <field string="" name="timesheet_matrix_ids" widget="x2many_2d_matrix" readonly="1" field_x_axis="task_id" field_y_axis="year" field_value="amount">
+                            <tree>
+                                <field name="year"/>
+                                <field name="task_id"/>
+                                <field name="amount" widget="float_time" sum="Total"/>
+                            </tree>
+                        </field>
+                    </group>
                 </page>
             </page>
         </field>
