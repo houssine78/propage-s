@@ -1,6 +1,6 @@
 # Copyright 2023 Open Architects Consulting SRL (https://www.openarchitecsconsulting.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class ResPartner(models.Model):
@@ -81,3 +81,11 @@ class ResPartner(models.Model):
     comments_afse = fields.Char(string="Comments AFSE")
     ineligibility_reason = fields.Char(string="Reason for ineligibility")
     vat_fse = fields.Char(string="VAT Number")
+
+    @api.depends('is_entrepreneur')
+    def _compute_display_name(self):
+        for partner in self:
+            if partner.is_entrepreneur:
+                partner.display_name = partner.name
+            else:
+                super(ResPartner, partner)._compute_display_name()
