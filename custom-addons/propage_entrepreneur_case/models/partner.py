@@ -80,3 +80,4 @@ class ResPartner(models.Model):
     ineligble_afse = fields.Boolean(string="participant made ineligible by AFSE")
     comments_afse = fields.Char(string="Comments AFSE")
     ineligibility_reason = fields.Char(string="Reason for ineligibility")
+    vat_fse = fields.Char(string="VAT Number")

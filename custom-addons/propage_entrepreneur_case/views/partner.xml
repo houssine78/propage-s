@@ -14,6 +14,7 @@
                     <group>
 	                    <group>
 		                    <field name="professional_status" />
+		                    <field name="vat_fse" />
 		                    <field name="inactive_period" />
 		                    <field name="education_level" />
 		                    <field name="action_start_date" />
