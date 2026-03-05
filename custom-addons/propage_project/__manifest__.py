@@ -28,4 +28,9 @@
         "wizard/calendar_time_registration_view.xml",
     ],
     "installable": True,
+    'assets': {
+    'web.assets_backend': [
+        'propage_project/static/src/css/calendar_custom.css',
+    ],
+},
 }

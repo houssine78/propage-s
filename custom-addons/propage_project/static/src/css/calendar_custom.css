@@ -1,0 +1,3 @@
+.o_calendar_renderer .o_event_title {
+    white-space: pre-wrap !important;
+}
