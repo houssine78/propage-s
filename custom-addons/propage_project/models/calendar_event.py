@@ -23,7 +23,9 @@ class Meeting(models.Model):
 
     def _compute_calendar_warning(self):
         for calendar in self:
-            warning = calendar.timesheet_ids.mapped("calendar_warning")
+            warning = False
+            if calendar.timesheet_ids:
+                warning = calendar.timesheet_ids.mapped("calendar_warning")[0]
             calendar.calendar_warning = warning
 
     @api.depends('name', 'meeting_type_id', 'timesheet_ids')
