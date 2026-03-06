@@ -15,7 +15,7 @@
             <page name="page_invitations" position="before">
 	            <page name="timesheets">
 	                <field name="timesheet_ids">
-	                   <tree editable="top" create="false" decoration-warning="calendar_warning">
+	                   <tree editable="top" create="false" decoration-danger="calendar_warning">
 	 	                    <field name="date"/>
 	 	                    <field name="project_id"/>
 	 	                    <field name="task_id"/>
