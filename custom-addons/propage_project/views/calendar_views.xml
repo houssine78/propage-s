@@ -8,9 +8,18 @@
                 <button icon="fa-bars" string="Register time" title="Register time"
                         type="action" name="%(action_view_calendar_time_registration_wizard)d" />
             </div>
-            
+            <sheet position="before">
+                <div class="alert alert-danger text-center o_form_header" 
+				     role="alert" 
+				     invisible="not calendar_warning"
+				     style="margin-bottom: 0px;">
+				    <strong>Warning !</strong> You don't have enough time registered for this meeting.
+				    Please registered the right amount of hours for this meeting.
+				</div>
+            </sheet>
             <field name="start_date" position="before">
                 <field name="meeting_type_id" widget="selection"/>
+                <field name="calendar_warning" invisible="True"/>
             </field>
             <page name="page_invitations" position="before">
 	            <page name="timesheets">

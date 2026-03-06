@@ -6,14 +6,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-15 12:59+0000\n"
-"PO-Revision-Date: 2026-02-15 12:59+0000\n"
+"POT-Creation-Date: 2026-03-06 17:23+0000\n"
+"PO-Revision-Date: 2026-03-06 17:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_calendar_event_form
+msgid ""
+"<strong>Warning !</strong> You don't have enough time registered for this meeting.\n"
+"\t\t\t\t    Please registered the right amount of hours for this meeting."
+msgstr "<strong>Attention !</strong> Vous n'avez pas enregistré le bon nombre de d'heures pour cette réunion.\n"
+"\t\t\t\t    Veuillez faire correspondre le nombre d'heures avec la durée de cette réunion."
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_accounting
+msgid "Accounting"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_accounting_obligations
@@ -79,6 +92,7 @@ msgstr "Événement calendrier"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__calendar_warning
+#: model:ir.model.fields,field_description:propage_project.field_calendar_event__calendar_warning
 msgid "Calendar Warning"
 msgstr ""
 
@@ -131,6 +145,8 @@ msgstr ""
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__customer_id
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__customer_id
+#: model:ir.model.fields,field_description:propage_project.field_timesheets_analysis_report__customer_id
+#: model_terms:ir.ui.view,arch_db:propage_project.view_timesheets_analysis_report_search_propage
 msgid "Customer"
 msgstr "Client"
 
@@ -197,6 +213,11 @@ msgid "FSE Time Logs"
 msgstr "Liste du temps FSE"
 
 #. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "FSE Training"
+msgstr ""
+
+#. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_account_analytic_line__is_fse
 #: model:ir.model.fields,field_description:propage_project.field_calendar_time_registration_line_wizard__is_fse
 #: model:ir.model.fields,field_description:propage_project.field_project_task__is_fse
@@ -207,6 +228,11 @@ msgstr "Tache FSE"
 #: model:project.task,name:propage_project.task_training_financial_forecast
 msgid "Financial forecasts"
 msgstr "Prévisions financières"
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_financial_management
+msgid "Financial management"
+msgstr "Management financier"
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_financial_strategy
@@ -227,6 +253,16 @@ msgid ""
 msgstr ""
 "Fonctionnement de la société coopérative/l’ASBL et prise de décisions au "
 "sein des organes de l’entreprise"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "Generate years"
+msgstr ""
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_gouv_org_coll
+msgid "Governance and collective organization"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_group_organization
@@ -293,6 +329,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:propage_project.field_partner_timesheet_matrix__write_date
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__write_date
 msgid "Last Updated on"
+msgstr ""
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_legal
+msgid "Legal"
 msgstr ""
 
 #. module: propage_project
@@ -407,6 +448,11 @@ msgid "Project"
 msgstr "Projet"
 
 #. module: propage_project
+#: model:project.tags,name:propage_project.tag_project_management
+msgid "Project management"
+msgstr "Gestion de projet"
+
+#. module: propage_project
 #: model:project.task,name:propage_project.task_tools
 msgid "Project structuring and management tools"
 msgstr "Outils de structuration et gestion de projet"
@@ -420,6 +466,11 @@ msgstr "Gestion de projets"
 #: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
 msgid "RW Timesheets"
 msgstr "Feuilles de temps RW"
+
+#. module: propage_project
+#: model_terms:ir.ui.view,arch_db:propage_project.view_partner_form_propage
+msgid "Recompute FSE time"
+msgstr ""
 
 #. module: propage_project
 #: model:project.task,name:propage_project.task_training_business_model
@@ -484,6 +535,11 @@ msgid ""
 msgstr ""
 "Orientation stratégique, formation à l’identification des objectifs et leur "
 "déclinaison en action"
+
+#. module: propage_project
+#: model:project.tags,name:propage_project.tag_stategic_thinking
+msgid "Strategic thinking"
+msgstr ""
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_project_task__sub_name
@@ -570,6 +626,11 @@ msgstr "Feuille de temps"
 #: model:ir.model.fields,field_description:propage_project.field_training_participant__timesheet_ids
 msgid "Timesheets"
 msgstr "Feuilles de temps"
+
+#. module: propage_project
+#: model:ir.model,name:propage_project.model_timesheets_analysis_report
+msgid "Timesheets Analysis Report"
+msgstr "Rapport d'analyse des feuilles de temps"
 
 #. module: propage_project
 #: model:ir.model.fields,field_description:propage_project.field_project_task__name

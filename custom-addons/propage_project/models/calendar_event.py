@@ -17,6 +17,14 @@ class Meeting(models.Model):
         "meeting.type",
         required=True
     )
+    calendar_warning = fields.Boolean(
+        compute="_compute_calendar_warning"
+    )
+
+    def _compute_calendar_warning(self):
+        for calendar in self:
+            warning = calendar.timesheet_ids.mapped("calendar_warning")
+            calendar.calendar_warning = warning
 
     @api.depends('name', 'meeting_type_id', 'timesheet_ids')
     def _compute_display_name(self):
