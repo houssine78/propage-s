@@ -89,3 +89,8 @@ class ResPartner(models.Model):
                 partner.display_name = partner.name
             else:
                 super(ResPartner, partner)._compute_display_name()
+
+    @api.model
+    def _address_fields(self):
+        """ Overidde the function as we don't want to have the contact adresse overidden by the parent one"""
+        return list([])
