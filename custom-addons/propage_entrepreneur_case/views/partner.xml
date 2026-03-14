@@ -8,7 +8,29 @@
                 <field name="is_entrepreneur" />
                 <field name="fse_id" />
             </xpath>
-            
+
+            <field name="street" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="street2" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="city" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="state_id" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="zip" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="country_id" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+            <field name="street" position="attributes">
+               <attribute name="readonly"></attribute>
+            </field>
+
             <page name="contact_addresses" position="after">
                 <page string="FSE Information" name="fse">
                     <group>
