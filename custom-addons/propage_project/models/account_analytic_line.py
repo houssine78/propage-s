@@ -35,6 +35,6 @@ class AccountAnalyticLine(models.Model):
                             lambda l: l.calendar_event_id.id == event_id.id and
                                       l.employee_id.id == line.employee_id.id
                 )
-                if sum(lines.mapped('unit_amount')) < duration:
+                if sum(lines.mapped('unit_amount')) != duration:
                     calendar_warning = True
                 line.calendar_warning = calendar_warning

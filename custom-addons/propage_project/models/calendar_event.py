@@ -26,6 +26,9 @@ class Meeting(models.Model):
             warning = False
             if calendar.timesheet_ids:
                 warning = calendar.timesheet_ids.mapped("calendar_warning")[0]
+            elif calendar.duration > 0:
+                warning = True
+                
             calendar.calendar_warning = warning
 
     @api.depends('name', 'meeting_type_id', 'timesheet_ids')
