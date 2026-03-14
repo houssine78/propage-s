@@ -20,7 +20,7 @@ msgstr ""
 msgid ""
 "<strong>Warning !</strong> You don't have enough time registered for this meeting.\n"
 "\t\t\t\t    Please registered the right amount of hours for this meeting."
-msgstr "<strong>Attention !</strong> Vous n'avez pas enregistré le bon nombre de d'heures pour cette réunion.\n"
+msgstr "<strong>Attention !</strong> Vous n'avez pas enregistré le bon nombre d'heures pour cette réunion.\n"
 "\t\t\t\t    Veuillez faire correspondre le nombre d'heures avec la durée de cette réunion."
 
 #. module: propage_project
