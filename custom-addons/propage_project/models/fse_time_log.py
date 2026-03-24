@@ -20,8 +20,10 @@ class FSETimeLog(models.Model):
 
     @api.depends(
         'year',
+        'partner_id.trainings',
         'partner_id.trainings.state',
         'partner_id.trainings.training_date',
+        'partner_id.trainings.task_id',
         'partner_id.trainings.task_id.participant_count',
         'partner_id.trainings.timesheet_ids',
         'partner_id.trainings.timesheet_ids.timesheet_type',

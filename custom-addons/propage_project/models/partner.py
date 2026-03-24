@@ -70,6 +70,7 @@ class Partner(models.Model):
 
     @api.depends(
         "fse_time_log_ids",
+        "fse_time_log_ids.partner_id",
         "fse_time_log_ids.time_fse_p1",
         "fse_time_log_ids.time_fse_p2"
     )
@@ -93,7 +94,10 @@ class Partner(models.Model):
         if not self.fse_time_log_ids:
             self.init_time_log()
         if str(year) not in self.fse_time_log_ids.mapped('year'):
-            vals = {'partner_id': self.id, 'year': str(year)},
+            vals = {
+                'partner_id': self.id,
+                'year': str(year)
+            },
             self.env['fse.time.log'].create(vals)
         return True
 
