@@ -85,10 +85,7 @@ class ResPartner(models.Model):
     @api.depends('is_entrepreneur')
     def _compute_display_name(self):
         for partner in self:
-            if partner.is_entrepreneur:
-                partner.display_name = partner.name
-            else:
-                super(ResPartner, partner)._compute_display_name()
+            partner.display_name = partner.name
 
     @api.model
     def _address_fields(self):
