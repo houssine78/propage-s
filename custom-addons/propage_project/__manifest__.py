@@ -25,6 +25,7 @@
         "views/hr_timesheet_sheet_views.xml",
         "views/meeting_type_views.xml",
         "views/partner_views.xml",
+        "views/training_participant_views.xml",
         "wizard/calendar_time_registration_view.xml",
     ],
     "installable": True,

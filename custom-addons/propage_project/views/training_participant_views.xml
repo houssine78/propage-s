@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_training_participant_tree" model="ir.ui.view">
+        <field name="name">training.participant.tree</field>
+        <field name="model">training.participant</field>
+        <field name="arch" type="xml">
+            <tree string="Training Participants" sample="1">
+                <field name="training_date"/>
+                <field name="participant_id"/>
+                <field name="task_id"/>
+                <field name="sent_by_company"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-success="state == 'attended'"
+                       decoration-warning="state == 'missed'"
+                       decoration-danger="state == 'declined'"/>
+                <button name="action_attended" string="Attended" type="object" icon="fa-check" invisible="state == 'attended'"/>
+                <button name="action_missed" string="Missed" type="object" icon="fa-level-down" invisible="state == 'missed'"/>
+                <button name="action_declined" string="Declined" type="object" icon="fa-times" invisible="state == 'declined'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_training_participant_form" model="ir.ui.view">
+        <field name="name">training.participant.form</field>
+        <field name="model">training.participant</field>
+        <field name="arch" type="xml">
+            <form string="Training Participant">
+                <header>
+                    <button name="action_attended" string="Attended" type="object" class="oe_highlight" invisible="state == 'attended'"/>
+                    <button name="action_missed" string="Missed" type="object" invisible="state == 'missed'"/>
+                    <button name="action_declined" string="Declined" type="object" invisible="state == 'declined'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,attended,declined,missed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="participant_id" options="{'no_quick_create': True, 'no_create_edit': True}"/>
+                            <field name="sent_by_company"/>
+                        </group>
+                        <group>
+                            <field name="task_id"/>
+                            <field name="training_date"/>
+                            <field name="calendar_event_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="timesheets" string="Timesheets">
+                            <field name="timesheet_ids" readonly="1">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="employee_id"/>
+                                    <field name="name"/>
+                                    <field name="unit_amount" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_training_participant_search" model="ir.ui.view">
+        <field name="name">training.participant.search</field>
+        <field name="model">training.participant</field>
+        <field name="arch" type="xml">
+            <search string="Training Participants">
+                <field name="participant_id"/>
+                <field name="task_id"/>
+                <field name="training_date"/>
+                <filter string="Draft" name="filter_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Attended" name="filter_attended" domain="[('state', '=', 'attended')]"/>
+                <filter string="Missed" name="filter_missed" domain="[('state', '=', 'missed')]"/>
+                <filter string="Declined" name="filter_declined" domain="[('state', '=', 'declined')]"/>
+                <separator/>
+                <filter string="Sent by Company" name="filter_sent_by_company" domain="[('sent_by_company', '=', True)]"/>
+                <separator/>
+                <filter string="Today" name="filter_today" domain="[('training_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="This Week" name="filter_this_week"
+                        domain="[('training_date', '&gt;=', (context_today() + relativedelta(weeks=-1, days=1, weekday=0)).strftime('%Y-%m-%d')),
+                                 ('training_date', '&lt;=', (context_today() + relativedelta(weekday=6)).strftime('%Y-%m-%d'))]"/>
+                <filter string="This Month" name="filter_this_month"
+                        domain="[('training_date', '&gt;=', (context_today() + relativedelta(day=1)).strftime('%Y-%m-%d')),
+                                 ('training_date', '&lt;=', (context_today() + relativedelta(months=1, day=1, days=-1)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Task" name="group_task" context="{'group_by': 'task_id'}"/>
+                    <filter string="Participant" name="group_participant" context="{'group_by': 'participant_id'}"/>
+                    <filter string="Training Date" name="group_training_date" context="{'group_by': 'training_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_training_participant" model="ir.actions.act_window">
+        <field name="name">Training Participants</field>
+        <field name="res_model">training.participant</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_training_participant_search"/>
+        <field name="context">{'search_default_filter_draft': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new training participant
+            </p>
+        </field>
+    </record>
+
+</odoo>
