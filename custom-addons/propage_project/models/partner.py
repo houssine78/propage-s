@@ -78,11 +78,11 @@ class Partner(models.Model):
         for partner in self:
             time_fse_p1 = 0
             time_fse_p2 = 0
-    
-            for time_log in self.fse_time_log_ids:
+
+            for time_log in partner.fse_time_log_ids:
                 time_fse_p1 += time_log.time_fse_p1
                 time_fse_p2 += time_log.time_fse_p2
-    
+
             partner.time_fse_p1 = time_fse_p1
             partner.time_fse_p2 = time_fse_p2
 
@@ -97,7 +97,7 @@ class Partner(models.Model):
             vals = {
                 'partner_id': self.id,
                 'year': str(year)
-            },
+            }
             self.env['fse.time.log'].create(vals)
         return True
 
