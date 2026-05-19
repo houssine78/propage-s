@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="fse_time_log_cleanup_wizard_form" model="ir.ui.view">
+        <field name="name">fse.time.log.cleanup.wizard.form</field>
+        <field name="model">fse.time.log.cleanup.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Cleanup FSE Time Log Duplicates">
+                <div invisible="state != 'detect'">
+                    <group>
+                        <div class="alert alert-warning" role="alert" colspan="2">
+                            <strong>Duplicates detected: </strong>
+                            <field name="duplicate_count" class="oe_inline"/>
+                            entries will be deleted. The oldest entry per (partner, year)
+                            is always kept.
+                        </div>
+                    </group>
+                    <field name="line_ids" readonly="1">
+                        <tree>
+                            <field name="partner_id"/>
+                            <field name="year"/>
+                            <field name="time_fse_p1" widget="float_time"/>
+                            <field name="time_fse_p2" widget="float_time"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="action_delete_duplicates"
+                                string="Delete duplicates"
+                                type="object"
+                                class="btn-primary"
+                                confirm="Are you sure you want to delete these duplicate entries? This action cannot be undone."/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </div>
+                <field name="state" invisible="1"/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the wizard -->
+    <record id="action_fse_time_log_cleanup_wizard" model="ir.actions.act_window">
+        <field name="name">Cleanup FSE Duplicates</field>
+        <field name="res_model">fse.time.log.cleanup.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Menu entry under Contacts > Configuration -->
+    <menuitem id="menu_fse_time_log_cleanup"
+              name="Cleanup FSE Duplicates"
+              parent="contacts.res_partner_menu_config"
+              action="action_fse_time_log_cleanup_wizard"
+              sequence="99"/>
+</odoo>

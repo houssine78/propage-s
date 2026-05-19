@@ -13,3 +13,5 @@ access_fse_time_log,fse.time.log,propage_project.model_fse_time_log,propage_base
 access_meeting_type_user,meeting.type.user,propage_project.model_meeting_type,propage_base.group_propage_user,1,0,0,0
 access_meeting_type_manager,meeting.type.manager,propage_project.model_meeting_type,propage_base.group_propage_manager,1,1,1,0
 access_partner_timesheet_matrix,partner.timesheet.matrix,propage_project.model_partner_timesheet_matrix,propage_base.group_propage_user,1,1,1,1
+access_fse_time_log_cleanup_wizard,fse.time.log.cleanup.wizard,propage_project.model_fse_time_log_cleanup_wizard,propage_base.group_propage_manager,1,1,1,1
+access_fse_time_log_cleanup_line,fse.time.log.cleanup.line,propage_project.model_fse_time_log_cleanup_line,propage_base.group_propage_manager,1,1,1,1

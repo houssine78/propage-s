@@ -3,7 +3,7 @@
 
 {
     "name": "Propage-s Custom Project Module",
-    "version": "17.0.1.0.3",
+    "version": "17.0.1.0.4",
     "category": "Project",
     "author": "Open Architects Consulting",
     "website": "https://www.openarchitecsconsulting.com",
@@ -27,6 +27,7 @@
         "views/partner_views.xml",
         "views/training_participant_views.xml",
         "wizard/calendar_time_registration_view.xml",
+        "wizard/fse_time_log_cleanup_view.xml",
     ],
     "installable": True,
     'assets': {

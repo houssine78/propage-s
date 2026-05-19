@@ -6,10 +6,14 @@ from odoo import api, fields, models
 
 class FSETimeLog(models.Model):
     _name = 'fse.time.log'
+    _description = 'FSE Time Log'
 
     _sql_constraints = [
-        ('partner_year_unique', 'UNIQUE(partner_id, year)',
-         'A FSE time log must be uniq per year and per partner.')
+        (
+            'partner_year_unique',
+            'UNIQUE(partner_id, year)',
+            'A FSE time log entry already exists for this partner and year.',
+        ),
     ]
 
     partner_id = fields.Many2one('res.partner', required=True)
@@ -39,9 +43,9 @@ class FSETimeLog(models.Model):
             start_date = date(int(fse_time_log.year), 1, 1)
             end_date = date(int(fse_time_log.year), 12, 31)
             trainings = fse_time_log.partner_id.trainings.filtered(
-                lambda r: r.state in ['attended', 'missed'] and 
+                lambda r: r.state in ['attended', 'missed'] and
                           r.training_date >= start_date and
-                          r.training_date <= end_date 
+                          r.training_date <= end_date
             )
             task_time_fse_p1 = 0.0
             task_time_fse_p2 = 0.0
