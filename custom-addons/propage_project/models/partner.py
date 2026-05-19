@@ -104,13 +104,14 @@ class Partner(models.Model):
 
     def init_time_log(self):
         year = fields.Date.today().year
-        
+        existing_years = set(self.fse_time_log_ids.mapped('year'))
         fse_vals_list = [
-            {'partner_id': self.id, 'year': str(year)},
-            {'partner_id': self.id, 'year': str(year - 1)},
-            {'partner_id': self.id, 'year': str(year - 2)},
+            {'partner_id': self.id, 'year': str(y)}
+            for y in [year, year - 1, year - 2]
+            if str(y) not in existing_years
         ]
-        self.env['fse.time.log'].create(fse_vals_list)
+        if fse_vals_list:
+            self.env['fse.time.log'].create(fse_vals_list)
 
     @api.model_create_multi
     def create(self, vals_list):
