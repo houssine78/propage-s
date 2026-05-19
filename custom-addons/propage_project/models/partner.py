@@ -93,6 +93,7 @@ class Partner(models.Model):
         year = fields.Date.today().year
         if not self.fse_time_log_ids:
             self.init_time_log()
+            return True
         if str(year) not in self.fse_time_log_ids.mapped('year'):
             vals = {
                 'partner_id': self.id,
