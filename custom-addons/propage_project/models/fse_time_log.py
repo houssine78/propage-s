@@ -7,6 +7,11 @@ from odoo import api, fields, models
 class FSETimeLog(models.Model):
     _name = 'fse.time.log'
 
+    _sql_constraints = [
+        ('partner_year_unique', 'UNIQUE(partner_id, year)',
+         'A FSE time log must be uniq per year and per partner.')
+    ]
+
     partner_id = fields.Many2one('res.partner', required=True)
     year = fields.Char(required=True)
     time_fse_p1 = fields.Float(
